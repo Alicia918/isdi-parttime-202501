@@ -1,3 +1,5 @@
 # isdi-parttime-202501
-Hello, World Ali!
-git
+Hello, World!
+
+
+This is develop
