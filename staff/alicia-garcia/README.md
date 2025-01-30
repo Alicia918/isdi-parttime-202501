@@ -8,16 +8,17 @@
     mkdir 'nombre carpeta'
 ```
 ### despues de crear carpeta hacemos los siguientes pasos
-- [] 
+-  
+
     ```sh
     git add 'nombre carpeta'
     ```
-- []
+- 
     
     ```sh
     git commit -m 'modifyc nombre carpeta'
     ```
-- []
+- 
     ```sh
     git push
     ```
