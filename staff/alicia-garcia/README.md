@@ -1,2 +1,12 @@
 #alicia 918 #6 issue
- hola
+ 
+ #Estes son los apuntes de git
+
+
+ Crear carpeta en terminal de Bash 
+
+```sh 
+
+mkdir <nombre> 
+
+``` 
