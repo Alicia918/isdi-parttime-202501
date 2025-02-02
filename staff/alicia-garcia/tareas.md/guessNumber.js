@@ -1,9 +1,8 @@
-// 1º intento 
+// 1/2 intento 
 
 function guessNumber() { 
 
     var number = 4; 
-
     var guess = prompt('en qué número crees que estoy pensando?'); 
 	
 	while (number == 4) {
@@ -25,10 +24,7 @@ function guessNumber() {
 
 } 
 
-
 var isGameOn = confirm('Quieres jugar a un juego?') 
-
- 
 
 if (isGameOn) { 
 
@@ -40,9 +36,7 @@ if (isGameOn) {
 
 } 
 
- 
-
-// 2º intentgo sale infinito
+// 2/2 intentgo sale infinito
 
 function guessNumber() { 
 
@@ -54,14 +48,18 @@ function guessNumber() {
 	
 	while (number !== numberCorrecto) {
 		console.log('1');
+
 		if (number < numberCorrecto) {
             console.log('2');
+
 			alert('Caliente, valor más pequeño que 5 de diferencia!') 
+
 		} else {
-			alert('frio, valor más de 5 de diferencia!') 
-			
+
+			alert('frio, valor más de 5 de diferencia!') 	
 			
         }
+		
         contador++;
         var guess = prompt('en qué número crees que estoy pensando?'); 	
 	}		 												
