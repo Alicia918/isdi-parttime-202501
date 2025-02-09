@@ -38,7 +38,8 @@ function validateInputLetter(letter) {
     
     for (var i = 0; i < alphabet.length; i++) { /*iterar abecedario para comprobar que el caracter es una letra, y pasarlo a minuscula si hace falta*/
         if (letter === alphabet[i] || letter === alphabetUpper[i]) { //comparo la misma posición en alfabeto en minusculas y en mayusculas y si hay una coincidencia, me salgo de la función devolviendo la letra en minuscula
-            return alphabet[i]
+            return alphabet[i], alphabetUpper[i]
+         
         }
     }
     return;
@@ -63,17 +64,15 @@ function checkLetterIncluded(letter) { //actualiza guessedWord si la letra esta 
 
 /**************************************************************************************************************/
 
-getRandonWord(ranWord)
-
 for (var i = 0; i < word.length; i++) { //esto lo genera de inicio (solo guiones y espacios si hacen falta)
     if (word[i] === ' ') {
         guessedWordArray[guessedWordArray.length] = ' '
     } else {
-        guessedWordArray[guessedWordArray.length] = '*'
+        guessedWordArray[guessedWordArray.length] = '* '
     }
 }
 
-guessedWordToString(); //completa el guessedWord (string) solo con guiones
+guessedWordToString(); //completa el guessedWord (string) solo con asteriscos
   
 /*comienza el juego*/
 alert('Welcome to the Hangman game, try to guess the word!') 
