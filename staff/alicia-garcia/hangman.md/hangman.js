@@ -1,7 +1,12 @@
 
-debugger
+//debugger
+/*
+Añadido nueva función loserWinner de salida o si gana el juego.
+Añadido nueva función 'getRandonWord' para elegir una palabra aleatoria. 
+Añadido !isNaN(letter) Comprueba que la entrada no sea un número. Si letter es un número, 
+*/
 var ranWord = ['Jardin','Jazmin','Oceano','Piscina','Luciernaga'];
-var word = getRandonWord(word);
+var word = getRandonWord(ranWord);
 var guessedWordArray = [] //almacenara el patrón de la palabra adivinada hasta ahora ([-,-,l,l,-] para hello)
 var guessedWord = '' //almacena el patrón pero en un string -----
 var lifes = 5;
@@ -18,7 +23,7 @@ function getRandonWord(ranWord) {
 }
 
 /****************************************/
-/* Función para pasar el array a string */
+/* Función pasar el array a string */
 /****************************************/
 function guessedWordToString() { //función para pasar el array a string
     guessedWord = ''
@@ -31,15 +36,16 @@ function guessedWordToString() { //función para pasar el array a string
 /* Función valida letras                */
 /****************************************/
 function validateInputLetter(letter) {
-    if (letter.length !== 1 || letter === ' ') { //compruebo que la letra es solo un caracter
+    if (letter.length !== 1 || letter === ' ' || !isNaN(letter)) { //compruebo que la letra es solo un caracter
         alert('make sure you put a single letter')
         return;
     }
     
     for (var i = 0; i < alphabet.length; i++) { /*iterar abecedario para comprobar que el caracter es una letra, y pasarlo a minuscula si hace falta*/
-        if (letter === alphabet[i] || letter === alphabetUpper[i]) { //comparo la misma posición en alfabeto en minusculas y en mayusculas y si hay una coincidencia, me salgo de la función devolviendo la letra en minuscula
-            return alphabet[i], alphabetUpper[i]
-         
+        if (letter === alphabetUpper[i] ) { //comparo la misma posición en alfabeto en minusculas y en mayusculas y si hay una coincidencia, me salgo de la función devolviendo la letra en minuscula
+            return alphabetUpper[i]
+        }else if (letter === alphabet[i]){
+            return alphabet[i]
         }
     }
     return;
@@ -61,18 +67,30 @@ function checkLetterIncluded(letter) { //actualiza guessedWord si la letra esta 
     }
 }
 
+/****************************************/
+/* Función pierde o gana                */
+/****************************************/
+function loserWinner() {
+    if (lifes === 0) {
+    alert('see you later, good luck ')
+    }
 
-/**************************************************************************************************************/
+    if (guessedWord === word) {
+    alert(`congrats, you win! The word was: ${word}`)
+    }
+}
+
+/**/
 
 for (var i = 0; i < word.length; i++) { //esto lo genera de inicio (solo guiones y espacios si hacen falta)
-    if (word[i] === ' ') {
+       if (word[i] === ' ') {
         guessedWordArray[guessedWordArray.length] = ' '
     } else {
         guessedWordArray[guessedWordArray.length] = '* '
     }
 }
 
-guessedWordToString(); //completa el guessedWord (string) solo con asteriscos
+guessedWordToString(); //completa el guessedWord (string) solo con guiones
   
 /*comienza el juego*/
 alert('Welcome to the Hangman game, try to guess the word!') 
@@ -80,8 +98,7 @@ alert('Welcome to the Hangman game, try to guess the word!')
 while (guessedWord !== word && lifes !== 0) {
     var guessedLetter = prompt(`This is all you know about the word so far: \n   ${guessedWord} \nYou have ${lifes} lifes`)
     if (guessedLetter === null) {
-        lifes = 0 //para cancelar la condicion del while si quiero salirme
-        alert('ok, bye')
+        lifes = 0 //para cancelar la condicion del while si quiero salirme     
     } else {
         var validatedLetter = validateInputLetter(guessedLetter)
         if (validatedLetter !== undefined) {
@@ -89,24 +106,6 @@ while (guessedWord !== word && lifes !== 0) {
             guessedWordToString() //actualizar el string para asegurarme de que si he completado la palabra no vuelvo a entrar en el bucle
         }
     }
-
+console.log(validatedLetter);
+loserWinner()
 }
-
-if (lifes === 0) {
-    alert('oooh! you loser, better luck next time')
-}
-
-if (guessedWord === word) {
-    alert(`congrats, you win! The word was: ${word}`)
-}
-
-
-
-
-
-
-
-
-
-
-
