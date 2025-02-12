@@ -2,19 +2,44 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    
+    font-size: 16px;
+    background-color: #f0f0f0;
+    
+      
 
 }
 #sol { 
     height: 4rem;
     width: 4rem;
+    grid-row: 1;
+    grid-column: 2;
     background-color: rgb(197, 187, 75);
     border-radius: 50%;
   
 }
-  
+
+.triangulo {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgb(140, 22, 26);
+
+  }
+
+#triangulo_1{
+    grid-row: 3;
+    grid-column: 1;
+}
+  #triangulo_2 { 
+    grid-row: 3;
+    grid-column: 2;
+}
 .cubo{
-    height: 150px;
-    width: 100px;
+    height: 100%;
+    width: 72%;
+    
  }
   
 #cubo_1 {
@@ -26,8 +51,31 @@
 #cubo_2 {
     grid-row: 4;
     grid-column: 2;
-    background-color: rgb(192, 216, 214);
+    background-color: rgb(121, 169, 165);
       
    }
+
+#mar {
+    grid-area: 4 / 3/ 5/ 6;
+    background-color: aqua;
+}
   
+#Vela {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid rgb(12, 39, 90);
+    grid-row: 3;
+    grid-column: 4;
+    
+  }
+#barco {
+    height: 30%;
+    width: 90%;
+    grid-row: 4;
+    grid-column: 4;
+    background-color: rgb(187, 218, 210); 
+
+}
    
