@@ -1,31 +1,33 @@
-.head {
-    margin-left: 10%;
-    margin-top: 10%;
+#lienzo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+}
+#sol { 
     height: 4rem;
     width: 4rem;
     background-color: rgb(197, 187, 75);
-   /* border-top: 10px solid black;*/
-   border-radius: 50%;
-  /* position: absolute;*/
+    border-radius: 50%;
+  
 }
-
-
-.cubo_1 {
-
-    margin-left: 40%;
-    margin-top: 20%;
+  
+.cubo{
     height: 150px;
     width: 100px;
-    background-color: rgb(100, 123, 47);
-    float: left; 
-}
- .cubo_2 {
-    float: left; 
-    margin-left: 55%;
-    height: 150px;
-    width: 100px;
-    background-color: rgb(90, 34, 83);
-    
  }
+  
+#cubo_1 {
+    grid-row: 4;
+    grid-column: 1;
+    background-color: rgb(187, 218, 210); 
+}
 
- 
+#cubo_2 {
+    grid-row: 4;
+    grid-column: 2;
+    background-color: rgb(192, 216, 214);
+      
+   }
+  
+   
