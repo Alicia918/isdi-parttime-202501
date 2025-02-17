@@ -29,7 +29,7 @@ body.style.gap = '2rem';
 
 //Creamos el titulo y le damos estilos
 var gameTitle = document.createElement('h1');
-gameTitle.textContent = 'EL JUEGO DEL CALAMAR';
+gameTitle.textContent = 'PIEDRA, PAPEL, TIJERAS';
 gameTitle.style.textAlign = 'center';
 gameTitle.style.color = 'blue';
 gameTitle.style.fontFamily = 'Russo One';
@@ -63,7 +63,7 @@ function generateChoiceButton(_choice) {
     button.style.marginBottom = '2rem';
     button.style.marginLeft = '20rem';
     button.style.padding = '10px 20px';
-    button.style.backgroundColor= '#3498db';
+    button.style.backgroundColor= 'blue';
     button.style.color = 'white';
     button.style.border = 'none';
     button.style.fontSize = '1.5rem';
@@ -76,7 +76,7 @@ function generateChoiceButton(_choice) {
         getRandonWord();
         win(button);
         //rockimgUser.src = '';
-       // rockimgPC.src = '';
+        // rockimgPC.src = '';
         life ++
     })
     buttonContainer.appendChild(button)
@@ -121,6 +121,7 @@ function rendePC(choice) {
     rendePCTitle.style.marginBottom = '2rem';        
     rendePCTitle.style.padding = '40px 40px';
     rendePCTitle.style.backgroundColor= '#3498db';
+    //gameTitle.style.color = 'blue';
     rendePCTitle.style.width = '10rem';
     rendePCTitle.style.fontSize = '2.0rem';
     rendePCTitle.style.alignItems = 'center'
@@ -147,41 +148,52 @@ function win(button) {
             alert ('Deuce');
 
         } else if ((user === 'rock' && pc === 'scissors' ) || (user === 'scissors' && pc === 'paper' ) || (user === 'paper' && pc === 'rock' )) {
-                imageUser(user);
-                alert('user win');
+            
+            imageUser(user);
+            alert('user win');
             
         } else {
+
             imagePC(pc);
             alert('PC win');
         }
+        
     } else {
+
         alert('Game Over')
     }
 }
 
+/*********************************/
+/*  Funcion img user.            */
+/*********************************/
 function imageUser(user) {
 
     var rockimgUser = document.createElement('img') //img 
     buttonContainer.appendChild(rockimgUser)
-    alert(user);
+    //alert(user);
    // alert(pc);
     rockimgUser.style.height = '12rem'
 
     if (user === 'rock') {
         
-        rockimgUser.src = 'https://cdn-icons-png.freepik.com/256/5773/5773204.png?ga=GA1.1.1811276553.1739812746&semt=ais_hybrid'
-       
+        rockimgUser.src = 'https://cdn-icons-png.freepik.com/256/5773/5773204.png?ga=GA1.1.1811276553.1739812746&semt=ais_hybrid'   
 
     } else if (user === 'paper') {
+
         rockimgUser.src = 'https://cdn-icons-png.freepik.com/512/13321/13321142.png?ga=GA1.1.1811276553.1739812746'
 
     } else {
+
         rockimgUser.src = 'https://th.bing.com/th/id/OIP.dVlpnjKJKfVe1SkC3AJbLwHaHa?pid=ImgDet&w=159&h=159&c=7'
 
     }
  
 }
 
+/*********************************/
+/*  Funcion img pc.              */
+/*********************************/
 function imagePC(pc) {
     var rockimgPc = document.createElement('img') //img 
     rendePCContainer.appendChild(rockimgPc) 
@@ -193,9 +205,11 @@ function imagePC(pc) {
         rockimgPc.src = 'https://cdn-icons-png.freepik.com/256/5773/5773204.png?ga=GA1.1.1811276553.1739812746&semt=ais_hybrid'
   
     } else if (pc === 'paper') {
+
         rockimgPc.src = 'https://cdn-icons-png.freepik.com/512/13321/13321142.png?ga=GA1.1.1811276553.1739812746'
 
     } else {
+
         rockimgPc.src = 'https://th.bing.com/th/id/OIP.dVlpnjKJKfVe1SkC3AJbLwHaHa?pid=ImgDet&w=159&h=159&c=7'
 
     }
