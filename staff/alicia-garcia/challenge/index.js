@@ -20,56 +20,73 @@ var pc = '';
 life = 0;
 
 //Estilos del body
-//body.style.display = 'flex';
 var body = document.body;
-body.style.flexDirection = 'column';
-body.style.alignItems = 'center'
-body.style.gap = '2rem';
+    body.style.display = 'flex';
+    body.style.flexDirection = 'column';
+    //body.style.alignItems = 'center'
+    //body.style.gap = '2rem';
+    body.style.border = 'solid 2px green';
 
 
 //Creamos el titulo y le damos estilos
 var gameTitle = document.createElement('h1');
-gameTitle.textContent = 'PIEDRA, PAPEL, TIJERAS';
-gameTitle.style.textAlign = 'center';
-gameTitle.style.color = 'blue';
-gameTitle.style.fontFamily = 'Russo One';
-gameTitle.style.marginBottom = '10rem';
+    gameTitle.textContent = 'PIEDRA, PAPEL, TIJERAS';
+    gameTitle.style.textAlign = 'center';
+    gameTitle.style.color = 'orange';
+    gameTitle.style.fontFamily = 'Russo One';
+    gameTitle.style.marginBottom = '4rem';
+
 //Añadimos el titulo al body
 body.appendChild(gameTitle);
 
+//contenedor general
 var generalContainer = document.createElement('div');
-generalContainer.style.display = 'flex'
-//generalContainer.style.border = 'solid'
-//generalContainer.style.borderColor = 'green'
+    generalContainer.style.display = 'flex';
+    generalContainer.style.justifyContent = 'space-around'; // Distribuye los elementos con espacio entre ellos
+    generalContainer.style.border = 'solid 2px yellow'; // Borde verde
+    generalContainer.style.padding = '2rem'; // Espacio interno en el contenedor
+    
 body.appendChild(generalContainer);
 
+//contenedor boton
+var buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.border = 'solid 2px red';
+    buttonContainer.style.padding = '3rem';
+
+    generalContainer.appendChild(buttonContainer);
+
+//contenedor pc
+var rendePCContainer = document.createElement('div');
+    rendePCContainer.style.display = 'flex';
+    rendePCContainer.style.border = 'solid 2px blue';
+    rendePCContainer.style.padding = '3rem';
+
+
+    generalContainer.appendChild(rendePCContainer);
+
+/*
 /*********************************/
 /*  Función elige botón.   user  */
 /*********************************/
-var buttonContainer = document.createElement('div');
 
 function generateChoiceButton(_choice) {
-    //buttonContainer.style.border = 'solid'
-    //buttonContainer.style.float = 'left'
-    //buttonContainer.style.width = '50%'    
-
     var button = document.createElement('button');
     button.textContent = _choice;
 
-    //Añadir estilos al botón 
+    //Añadir estilos al botón todo lo que hay dentro del botón
     button.style.width = '10rem';
     button.style.display = 'flex';
-    button.style.flexDirection = 'column';
-    button.style.marginBottom = '2rem';
-    button.style.marginLeft = '20rem';
-    button.style.padding = '10px 20px';
-    button.style.backgroundColor= 'blue';
+    button.style.justifyContent = 'space-around';
+    button.style.marginLeft = '2rem';
+    button.style.padding = '10px';
+    button.style.backgroundColor= 'orange';
     button.style.color = 'white';
-    button.style.border = 'none';
     button.style.fontSize = '1.5rem';
-    button.style.alignItems = 'center';
-   
-    
+    button.style.textAlign = 'center';
+    button.style.borderRadius = '10px';
+    button.style.height = '50px'; //Damos un altura determinada al botón//  
+       
     //cursor: pointer;
     button.addEventListener('click', function () {
         console.log(_choice)
@@ -80,10 +97,7 @@ function generateChoiceButton(_choice) {
         life ++
     })
     buttonContainer.appendChild(button)
-     
-    generalContainer.appendChild(buttonContainer);
        
-    
 }
 
 for (var i = 0; i < choices.length; i++) {
@@ -94,6 +108,7 @@ for (var i = 0; i < choices.length; i++) {
 /*********************************/
 /* Función palabra aleatoria. PC */
 /*********************************/
+
 function getRandonWord() { 
    
     var indexRandon = Math.floor(Math.random() * choices.length);
@@ -106,28 +121,23 @@ function getRandonWord() {
 /*********************************/
 /*  Función render  PC           */
 /*********************************/
-var rendePCContainer = document.createElement('div');
+
 
 function rendePC(choice) {
-   // rendePCContainer.style.width = '50%';
-    //rendePCContainer.style.float = 'right';
-    //rendePCContainer.style.border = 'solid';
     
-    var rendePCTitle = document.createElement('h2');
+    var rendePCTitle = document.createElement('button');
     rendePCTitle.textContent = choice;
     rendePCTitle.style.display = 'flex';
-    rendePCTitle.style.flexDirection = 'column';
-    rendePCTitle.style.marginLeft = '15rem';
-    rendePCTitle.style.marginBottom = '2rem';        
-    rendePCTitle.style.padding = '40px 40px';
-    rendePCTitle.style.backgroundColor= '#3498db';
-    //gameTitle.style.color = 'blue';
+    rendePCTitle.style.justifyContent = 'space-around';
     rendePCTitle.style.width = '10rem';
-    rendePCTitle.style.fontSize = '2.0rem';
-    rendePCTitle.style.alignItems = 'center'
-    rendePCTitle.style.position = 'absolute';
-        
-    generalContainer.appendChild(rendePCContainer);
+    rendePCTitle.style.marginLeft = '2rem';
+    rendePCTitle.style.fontSize = '1.5rem';     
+    rendePCTitle.style.padding = '10px';
+    rendePCTitle.style.backgroundColor= 'blue';
+    rendePCTitle.style.fontSize = '1.5rem';
+    rendePCTitle.style.textAlign = 'center';
+    rendePCTitle.style.borderRadius = '10px';
+    rendePCTitle.height = '50px'; //Damos un altura determinada al botón//  */
     
     rendePCContainer.appendChild(rendePCTitle);  
     
@@ -137,6 +147,7 @@ function rendePC(choice) {
 /*********************************/
 /*  Funcion Victoria.            */
 /*********************************/
+
 function win(button) { 
     user = button.textContent
     pc = choice
@@ -167,13 +178,16 @@ function win(button) {
 /*********************************/
 /*  Funcion img user.            */
 /*********************************/
+
 function imageUser(user) {
 
     var rockimgUser = document.createElement('img') //img 
-    buttonContainer.appendChild(rockimgUser)
-    //alert(user);
-   // alert(pc);
-    rockimgUser.style.height = '12rem'
+
+    rendePCTitle.style.display = 'flex';
+    //rendePCTitle.style.justifyContent = 'space-around';
+    rockimgUser.style.height = '1rem';
+    rockimgUser.style.marginTop = '1rem';
+    generalContainer.appendChild(rockimgUser);
 
     if (user === 'rock') {
         
@@ -186,7 +200,6 @@ function imageUser(user) {
     } else {
 
         rockimgUser.src = 'https://th.bing.com/th/id/OIP.dVlpnjKJKfVe1SkC3AJbLwHaHa?pid=ImgDet&w=159&h=159&c=7'
-
     }
  
 }
@@ -194,6 +207,7 @@ function imageUser(user) {
 /*********************************/
 /*  Funcion img pc.              */
 /*********************************/
+
 function imagePC(pc) {
     var rockimgPc = document.createElement('img') //img 
     rendePCContainer.appendChild(rockimgPc) 
