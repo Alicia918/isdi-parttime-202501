@@ -17,16 +17,15 @@ var choices = ['rock', 'paper', 'scissors'];
 var choice = ' ';
 var user = '';
 var pc = ''; 
-life = 0;
+var life = 0;
 
 //Estilos del body
 var body = document.body;
     body.style.display = 'flex';
     body.style.flexDirection = 'column';
-    //body.style.alignItems = 'center'
-    //body.style.gap = '2rem';
-    body.style.border = 'solid 2px green';
-
+   // body.style.border = 'solid 2px green';
+    body.style.backgroundColor= '#FCFFF5'; 
+   
 
 //Creamos el titulo y le damos estilos
 var gameTitle = document.createElement('h1');
@@ -43,29 +42,63 @@ body.appendChild(gameTitle);
 var generalContainer = document.createElement('div');
     generalContainer.style.display = 'flex';
     generalContainer.style.justifyContent = 'space-around'; // Distribuye los elementos con espacio entre ellos
-    generalContainer.style.border = 'solid 2px yellow'; // Borde verde
+    //generalContainer.style.border = 'solid 2px yellow'; // Borde verde
     generalContainer.style.padding = '2rem'; // Espacio interno en el contenedor
     
 body.appendChild(generalContainer);
 
-//contenedor boton
-var buttonContainer = document.createElement('div');
-    buttonContainer.style.display = 'flex';
-    buttonContainer.style.border = 'solid 2px red';
-    buttonContainer.style.padding = '3rem';
+//contenedor user
+var userContainer = document.createElement('div');
+    userContainer.style.display = 'flex';
+    userContainer.style.flexDirection = 'column';
+   // userContainer.style.border = 'solid 2px green';
+    userContainer.style.padding = '3rem';
+    userContainer.style.gap = '1rem';
 
-    generalContainer.appendChild(buttonContainer);
+    generalContainer.appendChild(userContainer);
 
 //contenedor pc
-var rendePCContainer = document.createElement('div');
-    rendePCContainer.style.display = 'flex';
-    rendePCContainer.style.border = 'solid 2px blue';
-    rendePCContainer.style.padding = '3rem';
+var PCContainer = document.createElement('div');
+    PCContainer.style.display = 'flex';
+    PCContainer.style.flexDirection = 'column';
+    PCContainer.style.gap = '1rem';
+    //PCContainer.style.border = 'solid 2px blue';
+    PCContainer.style.padding = '3rem';
+
+    generalContainer.appendChild(PCContainer);
+
+//contenedor boton user
+var buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'flex';
+   // buttonContainer.style.border = 'solid 2px pink';
+    buttonContainer.style.padding = '5rem';
+
+    userContainer.appendChild(buttonContainer);
+
+//contenedor boton pc
+var buttonContainerPc = document.createElement('div');
+    buttonContainerPc.style.display = 'flex';
+    buttonContainerPc.style.padding = '5rem';
+
+    PCContainer.appendChild(buttonContainerPc);
+
+//contenedor img user
+var userImge = document.createElement('div');
+    userImge.style.display = 'flex';
+    userImge.style.padding = 'column';
+    userImge.style.padding = '5rem';
+    userContainer.appendChild(userImge);
+
+//contenedor pc img
+var pcImge = document.createElement('div');
+    pcImge.style.display = 'flex';
+    pcImge.style.padding = 'column';
+    pcImge.style.padding = '5rem';
+
+    PCContainer.appendChild(pcImge);
 
 
-    generalContainer.appendChild(rendePCContainer);
 
-/*
 /*********************************/
 /*  Función elige botón.   user  */
 /*********************************/
@@ -80,7 +113,7 @@ function generateChoiceButton(_choice) {
     button.style.justifyContent = 'space-around';
     button.style.marginLeft = '2rem';
     button.style.padding = '10px';
-    button.style.backgroundColor= 'orange';
+    button.style.backgroundColor= '#51C9C2';
     button.style.color = 'white';
     button.style.fontSize = '1.5rem';
     button.style.textAlign = 'center';
@@ -90,11 +123,14 @@ function generateChoiceButton(_choice) {
     //cursor: pointer;
     button.addEventListener('click', function () {
         console.log(_choice)
-        getRandonWord();
-        win(button);
-        //rockimgUser.src = '';
-        // rockimgPC.src = '';
-        life ++
+        if (life < 3) {
+            getRandonWord();
+            life ++
+            win(button);
+        } else {
+
+            alert('Game Over')
+        }
     })
     buttonContainer.appendChild(button)
        
@@ -119,28 +155,30 @@ function getRandonWord() {
 }
 
 /*********************************/
-/*  Función render  PC           */
+/*  Función render  PC boton     */
 /*********************************/
 
 
 function rendePC(choice) {
     
-    var rendePCTitle = document.createElement('button');
-    rendePCTitle.textContent = choice;
-    rendePCTitle.style.display = 'flex';
-    rendePCTitle.style.justifyContent = 'space-around';
-    rendePCTitle.style.width = '10rem';
-    rendePCTitle.style.marginLeft = '2rem';
-    rendePCTitle.style.fontSize = '1.5rem';     
-    rendePCTitle.style.padding = '10px';
-    rendePCTitle.style.backgroundColor= 'blue';
-    rendePCTitle.style.fontSize = '1.5rem';
-    rendePCTitle.style.textAlign = 'center';
-    rendePCTitle.style.borderRadius = '10px';
-    rendePCTitle.height = '50px'; //Damos un altura determinada al botón//  */
+    var rendePCButton = document.createElement('button');
+    rendePCButton.textContent = choice;
+    rendePCButton.style.display = 'flex';
+    rendePCButton.style.width = '10rem';
+    rendePCButton.style.justifyContent = 'space-around';
+    rendePCButton.style.marginLeft = '2rem';
+    rendePCButton.style.padding = '10px';
+    rendePCButton.style.backgroundColor= '#EEE9CF'; 
+    rendePCButton.style.color = 'white';
+    rendePCButton.style.fontSize = '1.5rem';     
+    rendePCButton.style.textAlign = 'center';
+    rendePCButton.style.borderRadius ='10px'
+    rendePCButton.height = '50px'; //Damos un altura determinada al botón//  */
     
-    rendePCContainer.appendChild(rendePCTitle);  
-    
+    buttonContainerPc.appendChild(rendePCButton);  
+
+
+
 }
 
 
@@ -151,8 +189,8 @@ function rendePC(choice) {
 function win(button) { 
     user = button.textContent
     pc = choice
-
-    if (life < 3) {
+//debugger
+    if (life <= 3) {
              
         if (user === pc ) {
             
@@ -169,10 +207,7 @@ function win(button) {
             alert('PC win');
         }
         
-    } else {
-
-        alert('Game Over')
-    }
+    } 
 }
 
 /*********************************/
@@ -183,11 +218,10 @@ function imageUser(user) {
 
     var rockimgUser = document.createElement('img') //img 
 
-    rendePCTitle.style.display = 'flex';
-    //rendePCTitle.style.justifyContent = 'space-around';
-    rockimgUser.style.height = '1rem';
-    rockimgUser.style.marginTop = '1rem';
-    generalContainer.appendChild(rockimgUser);
+    rockimgUser.style.display = 'flex';
+    rockimgUser.style.height = '8rem';
+   // rockimgUser.style.marginTop = '1rem';
+    userImge.appendChild(rockimgUser);
 
     if (user === 'rock') {
         
@@ -210,9 +244,12 @@ function imageUser(user) {
 
 function imagePC(pc) {
     var rockimgPc = document.createElement('img') //img 
-    rendePCContainer.appendChild(rockimgPc) 
-    rockimgPc.style.height = '12rem'  
-   // rockimgPc.style.marginTop = '15rem';
+    rockimgPc.style.display = 'flex';
+    //rockimgUser.style.justifyContent = 'space-around';
+    //rockimgPc.style.marginTop = '5rem';
+    rockimgPc.style.height = '8rem';
+
+    pcImge.appendChild(rockimgPc) 
 
     if (pc === 'rock') {              
        
