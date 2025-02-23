@@ -225,10 +225,7 @@ function imageUser(user) {
     rockimgUser.style.display = 'flex';
     rockimgUser.style.height = '8rem';
     userImge.appendChild(rockimgUser);
-
-               
-    if (ganador < 1) {
-        ganador++
+            
 
         if (user === 'PIEDRA') {
         
@@ -241,11 +238,7 @@ function imageUser(user) {
         } else {
     
             rockimgUser.src = 'https://cdn-icons-png.freepik.com/512/12007/12007510.png?ga=GA1.1.1011703110.1740307321' 
-        }
-      
-    } else {
-        alert ('GANASTE');
-    }
+        }     
   
 }
 
