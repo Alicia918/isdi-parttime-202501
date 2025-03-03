@@ -1,0 +1,54 @@
+/* Contenedor Registro */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.regContainer_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    width: 100%;
+    height: 100%;
+    background : #f3f7f0;
+    z-index: 1;
+    border: solid green 2px; 
+ }
+
+.smallIcon { 
+    position: absolute;
+    top: 2%;  /* Coloca el contenedor a una distancia desde el top */
+    left: 3%;  /* Coloca el contenedor a una distancia desde la izquierda */
+    transform: translateX(-50%);  /* Centra el contenedor horizontalmente */
+    height: 4rem; /* Ajusta la altura del ícono */
+    width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */
+}
+
+.regTitle {
+    color: #224F60;
+    font-size: 1.5rem;
+    font-family: Russo One;  
+}
+
+
+.inputForm {
+    margin: 10px 0;         /* Espacio entre los inputs (en este caso, margen arriba y abajo) */
+    padding: 10px;          /* Un poco de espacio interno en cada input */
+    width: 80%;             /* Los inputs ocupan el 80% del contenedor (puedes ajustar este valor) */
+    max-width: 300px;       /* El ancho máximo del input es de 300px */
+    border: 1px solid #ccc; /* Borde delgado de color gris claro */
+    border-radius: 4px;     /* Bordes redondeados en los inputs */
+}
+
+.regButton {
+    height: 4rem; /* Ajusta la altura del ícono */
+    width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */   
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 15rem;
+}
