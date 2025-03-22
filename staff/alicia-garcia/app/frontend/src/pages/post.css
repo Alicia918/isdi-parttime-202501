@@ -1,0 +1,10 @@
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+
+.dialog {
+    background: none;
+    border: none;
+}
