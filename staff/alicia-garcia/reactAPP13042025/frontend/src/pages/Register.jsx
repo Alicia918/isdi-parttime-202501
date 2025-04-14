@@ -3,7 +3,7 @@
 /* PAGES 1 REGISTRAR crean las diferentes vistas de la app */
 /***********************************************************/
 
-const RegisterPage = () => {
+const Register = () => {
     return (
          <div className= "generalRegisterContainer">
 
@@ -23,7 +23,7 @@ const RegisterPage = () => {
          </div>     
     )
 }
-
+export default Register;	
  
 /*import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './LandingPage';  // Importa el componente LandingPage

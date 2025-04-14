@@ -1,15 +1,15 @@
-
-const useState = React.useState //Nos traemos el hook useState de react
+import React from "react";
+//const useState = React.useState //Nos traemos el hook useState de react
 //import * as ReactRouter from 'react-router-dom'; // Importa todo el paquete
-const useNavigate = React.useNavigate; // Extrae useNavigate de ReactRouter
+//const useNavigate = React.useNavigate; // Extrae useNavigate de ReactRouter
 
-const LandingPage = () => {
-   const [showPage, setShowPage] = useState(true);
+const Landing = () => {
+   /*const [showPage, setShowPage] = useState(true);
     
     const handleNavClick = () => {
        setShowPage(!showPage);
        useNavigate('/LandingPage, /RegisterPage')
-    }
+    }*/
 
   return (
     <div className="generalLandingContainer">
@@ -32,3 +32,4 @@ const LandingPage = () => {
     </div>
   )
 }
+export default Landing
