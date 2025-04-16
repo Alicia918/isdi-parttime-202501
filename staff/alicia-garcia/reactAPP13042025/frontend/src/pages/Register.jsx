@@ -1,43 +1,35 @@
-import './register.css';
-/***********************************************************/
-/* PAGES 1 REGISTRAR crean las diferentes vistas de la app */
-/***********************************************************/
+// Este componente es una página de registro que incluye un botón para redirigir a la página de inicio de sesión.
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
+import styles from './Register.module.css';
+
 
 const Register = () => {
-    return (
-         <div className= "generalRegisterContainer">
+     const navigate = useNavigate() // Hook para la navegación
+     const handleLoginRedirect = () => {
+          navigate('/login');
+     }; // Cambia la ruta según sea necesario
 
-              <div className="regContainer_1">
-                   <img className="smallIcon" src = 'https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746'></img>
-                   <img className="imgBackRegis"></img>
+     return (
+          <div className= {styles.generalRegisterContainer}>
 
+              <div className={styles.regContainer_1}>
+                   <img className={styles.smallIcon} src = 'https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746'
+                   alt='small Icon'
+                   ></img>
+                   <img className={styles.imgBackRegis}alt="Background"/>
               </div>
 
-              <div className="regContainer_2">
-                   <div className = "regTitle">
+              <div className={styles.regContainer_2}>
+                   <div className = {styles.regTitle}>
                         <p>INICIAR SESIÓN</p>
-                        <button className="logButton">Ir a Login</button>
+                        <button className={styles.logButton} onClick={handleLoginRedirect}>
+                         Ir a Login
+                        </button>
                    </div>
               </div>
-
-         </div>     
+          </div>     
     )
 }
 export default Register;	
  
-/*import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './LandingPage';  // Importa el componente LandingPage
-import RegisterPage from './RegisterPage';  // Importa el componente Register
-const RegisterPage = () => {
-    
-  return (
-
-    <Router>
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/RegisterPage" element={<RegisterPage />} /> {/src/components/RegisterPage.jsx}
-    </Routes>
-  </Router>
-
-   )
-}*/

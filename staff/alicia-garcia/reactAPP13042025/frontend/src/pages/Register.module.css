@@ -12,6 +12,7 @@ body{
     width: 100%;
     height: 100%;
     z-index: 1;
+    border: solid 2px blue; /* Borde azul para visualizar el contenedor */
 
  }
 
@@ -22,6 +23,7 @@ body{
     align-items: center;
     width: 100%;
     height: 100%;
+    border: solid 2px green; /* Borde azul para visualizar el contenedor */
     
 
  }
