@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+//import './index.css';
 import './App.css';
-
-//import './pages/register.css';
-
-
 
 function App() {
   return (
@@ -16,7 +12,10 @@ function App() {
         <img className="icon" src="https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746" />
             <div className="titleLanding">
                 <h>YOGA TERAPIA</h>
-            </div>           
+            </div>  
+            <div>
+                <button onClick={() => alert('¡Hola!')} className='joinButton'>COMENZAMOS</button>
+            </div>          
             
         </div>
     </div>
@@ -26,12 +25,17 @@ function App() {
 export default App;
 
 
-/* 
-<div>
-                {showPage && <Btn
-                    className={'joinButton'} 
-                    onClick={handleNavClick}    
-                    btnContent ={'COMENZAMOS'}
-                    />                  
-                }             
-            </div>        */
+
+
+/*
+
+export default App;
+/*<div>
+
+    {showPage && <Btn
+        className={'joinButton'} 
+        onClick={handleNavClick}    
+        btnContent ={'COMENZAMOS'}
+        />                  
+    }             
+</div>  */

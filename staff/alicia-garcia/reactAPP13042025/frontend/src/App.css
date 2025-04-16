@@ -17,9 +17,13 @@ body{
   margin: 0;
   padding: 0;
 }
-/*div img de fondo opaca*/
 .imgBack {
-  background-image: url("https://cdn.pixabay.com/photo/2016/04/07/01/02/yoga-1313110_1280.jpg");
+  background-color: #242424;
+}
+/*div img de fondo opaca*/
+.imgBack_1 {
+
+  background-image:  url("https://cdn.pixabay.com/photo/2016/04/07/01/02/yoga-1313110_1280.jpg");
   background-Size:  cover;
   background-Position: center;
   opacity: 0.3;  /* Hacer la imagen de fondo más transparente*/
@@ -51,7 +55,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;  /* Centra verticalmente */
-  color: #333; /* Un color oscuro para el texto color: #224F60;*/
+  color: whitesmoke; /* Un color oscuro para el texto color: #224F60;*/
   font-size: 1.5rem;
   font-family: montserrat;  
 
@@ -62,7 +66,7 @@ body{
   justify-content: center;
   align-items: center;
   z-index: 1; 
-  width: 15%;  /* Ajusta el tamaño de la imagen al 80% del contenedor */
+  width: 18%;  /* Ajusta el tamaño de la imagen al 80% del contenedor */
   height: auto;   
 }
 /*botón que comienza primera pantalla*/
@@ -72,7 +76,8 @@ body{
   align-items: center;  /* Centra verticalmente */
   width: 10rem;  
   color : white;
-  background : rosybrown;
+  background : #c2185b;
+ 
   height : 40px;
   font-family : Montserrat;
   font-Size : 1rem;
@@ -81,6 +86,9 @@ body{
   cursor: pointer;
 }
 
+.joinButton:hover {
+  background: mediumvioletred; /* Rosa más oscuro al pasar el mouse */
+}
 .home {
   display: flex;
   flex-direction: column;
