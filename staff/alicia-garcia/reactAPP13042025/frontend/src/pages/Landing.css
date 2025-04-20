@@ -76,7 +76,7 @@
     align-items: center;  /* Centra verticalmente */
     width: 10rem;  
     color : white;
-    background : #c2185b;
+    background : #db3276;
    
     height : 40px;
     font-family : Montserrat;
@@ -87,7 +87,8 @@
   }
   
   .joinButton:hover {
-    background: mediumvioletred; /* Rosa más oscuro al pasar el mouse */
+    background: #79fcc7; /* verde al pasar el mouse */
+    color : black;
   }
   .home {
     display: flex;

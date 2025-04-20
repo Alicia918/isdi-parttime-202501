@@ -1,4 +1,4 @@
-:root {
+/*:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,7 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Contenedor landing */
+/* Contenedor landing *
 body{
   margin: 0;
   padding: 0;
@@ -20,13 +20,13 @@ body{
 .imgBack {
   background-color: #242424;
 }
-/*div img de fondo opaca*/
+/*div img de fondo opaca*
 .imgBack_1 {
 
   background-image:  url("https://cdn.pixabay.com/photo/2016/04/07/01/02/yoga-1313110_1280.jpg");
   background-Size:  cover;
   background-Position: center;
-  opacity: 0.3;  /* Hacer la imagen de fondo más transparente*/
+  opacity: 0.3;  /* Hacer la imagen de fondo más transparente*
   height: 100vh;
   z-index: -1;
   width: 100%;    
@@ -34,7 +34,7 @@ body{
 .lanContainer_1 {
   display: flex;
   width: 100%;
-  height: 100vh;  /* Asegúrate de que el contenedor tenga altura de vista */
+  height: 100vh;  /* Asegúrate de que el contenedor tenga altura de vista *
   z-index: 1; 
   justify-content: center;
   align-items: center;    
@@ -54,26 +54,26 @@ body{
 .titleLanding { 
   display: flex;
   justify-content: center;
-  align-items: center;  /* Centra verticalmente */
-  color: whitesmoke; /* Un color oscuro para el texto color: #224F60;*/
+  align-items: center;  /* Centra verticalmente *
+  color: whitesmoke; /* Un color oscuro para el texto color: #224F60;*
   font-size: 1.5rem;
   font-family: montserrat;  
 
 }
-/*img icono proncipal*/
+/*img icono proncipal*
 .icon { 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1; 
-  width: 18%;  /* Ajusta el tamaño de la imagen al 80% del contenedor */
+  width: 18%;  /* Ajusta el tamaño de la imagen al 80% del contenedor *
   height: auto;   
 }
-/*botón que comienza primera pantalla*/
+/*botón que comienza primera pantalla*
 .joinButton{
   display: flex;
   justify-content: center;
-  align-items: center;  /* Centra verticalmente */
+  align-items: center;  /* Centra verticalmente *
   width: 10rem;  
   color : white;
   background : #c2185b;
@@ -87,7 +87,7 @@ body{
 }
 
 .joinButton:hover {
-  background: mediumvioletred; /* Rosa más oscuro al pasar el mouse */
+  background: mediumvioletred; /* Rosa más oscuro al pasar el mouse *
 }
 .home {
   display: flex;

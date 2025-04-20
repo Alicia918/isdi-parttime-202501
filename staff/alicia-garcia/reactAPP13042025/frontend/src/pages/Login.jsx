@@ -26,7 +26,7 @@ const Login = ({ setRefreshHeader }) => {
         <div className="login__register">
             <span className="login__register--text">Are you new here?</span>
             <span className="login__register--button">
-                <Link to="/register">Registrate!</Link>
+                <Link to="/register">Registrateeeeee!</Link>
             </span>
         </div>
     </div>
