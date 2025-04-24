@@ -7,18 +7,38 @@ import { useEffect, useRef, useState } from "react"
 function Home() {
     const navigate = useNavigate() // Hook para la navegación
     const [formData, setFormData] = useState({
-        titulo: '',
-        contenido: ''
+        titulo: 'Mi titulo',
+        contenido: 'Mi contenido',
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
+    // Manejar el envío del formulario
     const onSubmit = (e) => {
-        e.preventDefault();
-        console.log('Datos enviados:', formData);
+        e.preventDefault();// Evita que la página se recargue
+        console.log('Datos enviados:', formData); //Muestra los datos en la consola
     };
+    
+    // Aquí puedes enviar los datos a un servidor o realizar otra acción
+    // Ejemplo de envío a un servidor:
+    fetch('http://localhost:3000/api/posts.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Publicación exitosa:', data);
+            // Opcional: Redirigir o limpiar el formulario
+            setFormData({ titulo: '', contenido: '' });
+        })
+        .catch((error) => {
+            console.error('Error al publicar:', error);
+        });
+
     return (
         <div className= {styles.generalPostContainer}>
             <div className={styles.imgBackRegis}></div>
@@ -51,11 +71,11 @@ function Home() {
                        
                         htmlFor="titulo">Titulo</label>
                         <input className={styles.form_input}
-                            type="titulo" 
+                            type="text" 
                             id="titulo"
                             name="titulo"
                             placeholder=""
-                            value={formData.contenido}
+                            value={formData.titulo}
                             onChange={handleChange}
                             required />
                     </div>
@@ -63,7 +83,7 @@ function Home() {
                         <label className = {styles.form_label}
                         htmlFor="contenido">Contenido</label>
                         <input className={styles.form_input}
-                            type="contenido"
+                            type="text"
                             id="contenido"
                             name="contenido"
                             placeholder=""
@@ -75,16 +95,11 @@ function Home() {
                     <button
                         className={styles.form_button}
                         type="submit"
-                        onClick={() => { location.pathname === '/login'; } }>
+                        onClick={onSubmit}>
                         Publicar
                     </button>
 
-                    <div className={styles.postLikeBtn}>
-                    <button 
-                        onClick={() => handleLikePost(postData.id)}>
-                         <i class="bi bi-heart-fill"></i>
-                    </button>
-                    </div>
+                    
                 </form>
             </div>
         </div>
@@ -94,7 +109,14 @@ function Home() {
     
 export default Home;
 
-
+/* el corazon de like
+<div className={styles.postLikeBtn}>
+                    <button 
+                        onClick={() => handleLikePost(postData.id)}>
+                         <i class="bi bi-heart-fill"></i>
+                    </button>
+                    </div>
+*/
 
 
 

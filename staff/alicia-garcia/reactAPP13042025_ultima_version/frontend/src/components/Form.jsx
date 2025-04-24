@@ -49,7 +49,7 @@ const Form = ({ onSubmit, formData, handleChange }) => {
       <button 
         className='form_buttonLog' 
         type="submit"
-        onClick= ""          
+     
          > {location.pathname === '/login' ? 'Logueate' : 'Registrate'}
       </button>      
     </form>
