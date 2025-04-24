@@ -21,17 +21,20 @@ function Landing() {
         <header className ="imgBack"></header>
 
         <div className="lanContainer_2">
-        <img className="icon" src="https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746" />
+            <img className="icon" src="https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746" />
             <div className="titleLanding">
                 <h1>YOGA TERAPIA</h1>
             </div>  
             <div>
                 <button onClick={handleLoginRedirect} className='joinButton'>
                     COMENZAMOS
-                </button>
-            </div>                  
+                </button>                  
+            </div>
         </div>
-     
+        <div className="buttonHeader"
+             onClick={''}>   
+            &#8942; {/* Icono de menú 3 puntos*/}      
+        </div>  
     </div>
     
   )

@@ -7,9 +7,11 @@
 //import Public from "./pages/Public"
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Landing from "./pages/Landing"
-import Register from "./pages/Register"
-import Login from "./pages/Login"
+import Landing from "./pages/Landing";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Home from './pages/Home';
+
 
 
 const App = () => {
@@ -20,10 +22,18 @@ const App = () => {
           {/* Otras rutas */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       );
 
- /*   const [refreshHeader, setRefreshHeader] = useState(Date.now())
+ 
+}
+
+export default App
+
+
+
+/*   const [refreshHeader, setRefreshHeader] = useState(Date.now())
     const [isUserLogged, setIsUserLogged] = useState(logics.users.isUserLoggedIn())
     const location = useLocation()
     const navigate = useNavigate()
@@ -47,6 +57,3 @@ const App = () => {
         />
       {isUserLoggedIn() ? <Private setRefreshHeader={setRefreshHeader} /> : <Public setRefreshHeader={setRefreshHeader} />}
     </>*/
-}
-
-export default App

@@ -5,6 +5,7 @@ import Form from '../components/Form';
 import { useNavigate } from 'react-router-dom';
 
 
+
 const Register = () => {
     
     const navigate = useNavigate() // Hook para la navegación
@@ -30,6 +31,7 @@ const Register = () => {
         e.preventDefault(); // Evita que la página se recargue
         if (formData.password !== formData.confirmPassword) {
             alert('Las contraseñas no coinciden');
+            navigate('/register'); // Redirige al login después del registro
         return;
     }
     console.log('Datos enviados:', formData);
@@ -42,7 +44,7 @@ const Register = () => {
             <div className={styles.regContainer_1}>
                 <img className={styles.smallIcon} src = 'https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746'
                 alt='small Icon'
-                onClick={() => navigate('/landing')}
+                onClick={() => navigate('/')}
                 ></img>
                 <img className={styles.imgBackRegis}alt="Background"/>
             </div>
@@ -59,11 +61,13 @@ const Register = () => {
                 <button className={styles.logButton} 
                 onClick={() => navigate('/login')}
                 >
-                    Ir a Login
+                    ¿Tienes cuenta? Ir a Login
                 </button>
             </div>
-             
-        </div>     
+            <div className={styles.buttonSession}>
+                <button onClick={() => alert('Hola!')}></button>
+            </div>
+        </div>          
     );
 };
 export default Register;	

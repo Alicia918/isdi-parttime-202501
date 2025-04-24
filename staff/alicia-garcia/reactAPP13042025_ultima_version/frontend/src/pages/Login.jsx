@@ -27,19 +27,27 @@ const Login = () => {
     // Manejar el envío del formulario
     const handleSubmit = (e) => {
         e.preventDefault(); // Evita que la página se recargue
-        if (formData.password !== formData.confirmPassword) {
-            alert('Las contraseñas no coinciden');
+
+        if (formData.password === '' || formData.confirmPassword === '') {
+            alert('Por favor, completa ambos campos de contraseña');
+            navigate('/login'); // Redirige al login si están vacías
         return;
         }
+        if (formData.password !== formData.confirmPassword)  {
+            alert('Las contraseñas no coinciden');
+           navigate('/login'); // Redirige al login después del registro
+        return;
+        }
+       
         console.log('Datos enviados:', formData);
-        navigate('/register'); // Redirige al login después del registro
+        navigate('/home'); // Redirige al login después del registro
     };
 return (
     <div className= {styles.generalLoginContainer}>
         <div className={styles.regContainerLog}>
             <img className={styles.smallIconLog} src = 'https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746'
             alt='small Icon'
-            onClick={() => navigate('/landing')}
+            onClick={() => navigate('/')}
             ></img>
             <img className={styles.imgBackRegisLog}alt="Background"/>
         </div>

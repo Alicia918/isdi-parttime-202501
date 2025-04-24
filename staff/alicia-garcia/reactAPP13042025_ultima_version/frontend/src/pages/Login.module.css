@@ -3,7 +3,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
 .regContainerLog {   
     display: flex;
     flex-direction: column;
@@ -12,7 +11,6 @@ body{
     height: 100%;
     z-index: 1;
  }
-
  .regContainerLog2 {  
     display: flex;
     flex-direction: column;
@@ -27,21 +25,20 @@ body{
     transform: translateX(-50%);  /* Centra el contenedor horizontalmente */
     height: 4rem; /* Ajusta la altura del ícono */
     width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 .regTitleLog {
-    color: #79fcc7;
     font-size: 1.5rem;
     font-family: Montserrat;  
     text-transform: uppercase;
+    color: #224F60;      
    /*transform: rotateX(10deg) rotateY(10deg);*/  
 }
 .logButtonLog { /*botón iniciar sesión independinte del formulario */
     margin-top: 50px;
     padding: 10px;  /* Un poco de espacio interno en cada input */
-    background-color: #db3276;
-    color: white;
+    background-color: #224F60;/* #2de6cdd3;*/
+    color: white; 
     border: none;
     cursor: pointer;
     font-family: Montserrat; 
@@ -50,15 +47,16 @@ body{
     align-items: center;
     width: 30%;/* Los inputs ocupan el 80% del contenedor (puedes ajustar este valor) */
     /*height: 50%;*/
+    border: 0.1px solid #2de6cdd3;
 }
 
-.logButton:hover {
-    background: #79fcc7; /* verde al pasar el mouse */
-    color : black;   
+.logButtonLog:hover {
+    background: #2de6cdd3; /* verde al pasar el mouse */
+    color: #224F60; 
 }
 
 .imgBackRegisLog {
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/FonReg.png");
+    background:  url("/yogalogin.png");
    /* background-image: url("/FonReg.png"); */
     background-Size:  cover;
     background-Position: center;

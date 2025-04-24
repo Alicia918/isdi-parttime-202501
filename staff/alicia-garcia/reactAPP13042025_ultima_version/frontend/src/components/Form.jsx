@@ -1,12 +1,16 @@
 import React from 'react';
 import './Form.css'; // Importa el archivo CSS para estilos
 import { useState } from 'react'; // Importa useState desde react para manejar el estado
+import { useNavigate, useLocation } from 'react-router-dom'; // Importa useNavigate y useLocation desde react-router-dom
 
 const Form = ({ onSubmit, formData, handleChange }) => {
+  const navigate = useNavigate();
+  const location = useLocation(); // Obtiene la ubicación actual para determinar si es login o registro
+
   return (
     <form className="form" onSubmit={onSubmit}>
       <div>
-        <label htmlFor="email">Email</label>
+        <label className='form_label' htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
@@ -42,10 +46,12 @@ const Form = ({ onSubmit, formData, handleChange }) => {
         />
       </div>
     
-      <button className='form_button' type="submit"
-      onClick={() => navigate('/login')}
-      >Registrarse</button> 
-     
+      <button 
+        className='form_buttonLog' 
+        type="submit"
+        onClick= ""          
+         > {location.pathname === '/login' ? 'Logueate' : 'Registrate'}
+      </button>      
     </form>
   );
 };
@@ -56,20 +62,22 @@ export default Form;
 
 /*
 
-
+  <button 
+      className='form_button' 
+      type="button"
+      onClick={() => {
+        if (location.pathname === '/login') {
+          navigate('/post');
+          
+        } else if (location.pathname === '/register') {
+          navigate('/login');
+          
+        }
+      }}
+      > {location.pathname === '/login' ? 'Logueate' : 'Registrate'}</button> 
 
   
-      <button
-        className="form_button"
-        type="submit"
-        onClick={() => {
-          if (context === 'login') {
-            navigate('/register');
-          } else if (context === 'register') {
-            navigate('/login');
-          }
-        }}
-      >
+    
         {context === 'login' ? 'Ir a Registrarse' : 'Ir a Login'}
       </button>
 import { useEffect } from 'react'
