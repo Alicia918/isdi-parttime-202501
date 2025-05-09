@@ -7,9 +7,9 @@
     height: 100%;
     z-index: 1;
     font-family : Montserrat;
-    font-Size : 1rem;   
+    font-Size : 1rem; 
  }
-.PostContainer2 {
+.PostContainer2 { /* Contenedor arriba para icono y titulo */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,8 +48,7 @@
     font-size: 20px;
     font-family: Montserrat;  
     text-transform: uppercase;
-    color: #224F60; /* #242424d0;       /* Un color oscuro para el texto color: #224F60;*/   
-    
+    color: #224F60; /* #242424d0;       /* Un color oscuro para el texto color: #224F60;*/     
 }
 .postCardGeneral {
     display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
@@ -61,14 +60,11 @@
     font-family: Montserrat; /* Fuente utilizada para el texto dentro del contenedor */
     margin: auto; /* Centra horizontal y verticalmente */
     color: #224F60; 
-    /*position: relative; /* Asegura que el contenedor respete el flujo del documento */  
-
 }
 .post { /*estilos formulario*/
     display: flex;
     flex-direction: column; /* Cambia a "column" si quieres que los elementos se apilen verticalmente */
     justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center;  
     gap: 1rem;
     font-size: 1.3rem;
     font-family: Montserrat; 
@@ -77,61 +73,70 @@
     border-radius: 8px; /* Bordes redondeados */
     border: 2px solid #ccc; /* Borde delgado de color gris claro */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
-    width: 400px; /* Tamaño ajustado del formulario */
-    z-index: 1;
+    width: 500px; /* Tamaño ajustado del formulario */
     margin-top: 15px; /* Espacio superior para separar del borde superior */
     color: #333; /* Un color oscuro para el texto */
-  
-    font-size: 1rem;   
-    
 }
-
 .form_input {
-    display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
+   display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
     flex-direction: column; /* Los elementos hijos se colocan en una columna (uno debajo del otro) */
-    width: 100%; /* Asegura que ambos inputs tengan el mismo ancho */
+    width: 85%; /* Asegura que ambos inputs tengan el mismo ancho */
+    height: 3rem; /* Altura de los inputs */
     margin: 10px; /* Espacio entre los inputs (en este caso, margen arriba y abajo) */
     font-size: 1rem; /* Tamaño de fuente consistente */
     font-family: Montserrat;
     border-radius: 4px; /* Bordes redondeados */
-    /*box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
     padding: 10px;          /* Un poco de espacio interno en cada input */
-    /*background-color: rgb(212, 220, 220);*/
+    background-color: rgb(214, 235, 235);
+    margin: 0 auto; /* Centra el input horizontalmente */
 }
 .form_label {
     display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
-    flex-direction: column; /* Los elementos hijos se colocan en una columna (uno debajo del otro) */
-    font-size: 1rem; /* Tamaño de fuente consistente */
-    margin-bottom: 1rem; /* Espaciado entre el label y el input */
+    width: 100%; /* Asegura que ambos inputs tengan el mismo ancho */
     font-family: Montserrat; 
-    text-align: start; /* Centra el texto dentro del label */
     color: #224F60; /* Color del texto del label */
     font-weight: bold; /* Hace que el texto del label sea negrita */
-    /*margin-top: 1rem; /* Espacio superior para separar del borde superior */
     margin-bottom: 0.5rem; /* Espacio inferior para separar del input */
-    font-size: 1rem; /* Tamaño de fuente más grande para el label */
     text-transform: uppercase; /* Convierte el texto a mayúsculas */
     letter-spacing: 0.05em; /* Espaciado entre letras para un efecto más estilizado */
-    font-weight: bold;
+    height: 2rem;
+    text-align: center; /* Centra el texto dentro del label */ 
+}
+.postCard { /*estilos formulario*/
+    display: flex;
+    flex-direction: column; /* Cambia a "column" si quieres que los elementos se apilen verticalmente */
+    /*justify-content: center; /* Centra los elementos horizontalmente */
+    /*align-items: center; */ 
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-family: Montserrat; 
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */ 
+    padding: 35px;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #ccc; /* Borde delgado de color gris claro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+    width: 500px; /* Tamaño ajustado del formulario */
+   /* height: 100px;*/
+    margin-top: 15px; /* Espacio superior para separar del borde superior */
+    color: #333; /* Un color oscuro para el texto */
+    font-size: 1rem;   /* Tamaño de fuente consistente */
+    font-family: Montserrat; /* Fuente utilizada para el texto dentro del contenedor */
 }
 .postLikeBtn button{
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    /*padding: 0.5rem 1rem; /* Espaciado interno del botón */
     color:#224F60; /* Texto blanco */
     border: none; /* Sin borde */
-    /*border-radius: 0.25rem; /* Bordes redondeados */
     font-family: Montserrat; /* Fuente utilizada */
-    font-size: 1.5rem; /* Tamaño de fuente *
-    transition: background-color 0.3s ease; /* Transición suave al pasar el cursor */
-    /*padding: 0.5rem; /* Espaciado interno del botón */
-    text-align: start; /* Centra el texto dentro del label */
-    
+    font-size: 1.5rem; /* Tamaño de fuente */ 
+    text-align: start; /* Centra el texto dentro del label */   
 }
 .postLikeBtn button:hover {
-    background-color: #79a6a6; /* Cambia el color al pasar el cursor */
+    background-color: #ec46ad; /* Cambia el color al pasar el cursor */
 }
-
 .form_button {
+    display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
     width: 50%;
     padding: 10px;
     font-size: 1rem;
@@ -143,24 +148,13 @@
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
+    margin: 0 auto;
+    margin-top: 1rem; /* Espacio superior para separar del borde superior */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.form_button[type="submit"]:hover {
+    background: #5a6160; /* Cambia el color de fondo al pasar el mouse */
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
 .postContent {
     display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
     flex-direction: column; /* Los elementos hijos se colocan en una columna (uno debajo del otro) */
@@ -172,9 +166,21 @@
     top: 5rem; /* Coloca el contenedor en el centro vertical */
     position: relative; /* Asegura que el contenedor respete el flujo del documento */
     padding: 1rem; /* Espaciado interno de 1rem alrededor del contenido */
-
 }
-
+.publishPost {
+    display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
+    flex-direction: column; /* Los elementos hijos se colocan en una columna (uno debajo del otro) */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    width: 90%; /* El ancho del contenedor es el 100% del ancho de su padre */ 
+   
+    gap: 0.5rem; /* Espaciado entre los elementos hijos */
+    font-family: Montserrat; /* Fuente utilizada para el texto dentro del contenedor */
+    position: relative; /* Asegura que el contenedor respete el flujo del documento */
+    padding: 1rem; /* Espaciado interno de 1rem alrededor del contenido */
+    font-size: 1rem;
+    border: 1px solid #ec46ad; /* Borde delgado de color gris claro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+}
 
 
 

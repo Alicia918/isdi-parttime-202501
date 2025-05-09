@@ -2,13 +2,15 @@
 import styles from './Home.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from "react"
+import callServer from '/logic/index';
 //import CreatePostModal from "../../components/CreatePostModal"
 
 function Home() {
     const navigate = useNavigate() // Hook para la navegación
+    const [posts, setPosts] = useState([]); // Estado para almacenar las publicaciones
     const [formData, setFormData] = useState({
-        titulo: 'Mi titulo',
-        contenido: 'Mi contenido',
+        titulo: ' ',
+        contenido: ' ',
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,26 +20,33 @@ function Home() {
     const onSubmit = (e) => {
         e.preventDefault();// Evita que la página se recargue
         console.log('Datos enviados:', formData); //Muestra los datos en la consola
+
+        // Aquí llamar función que envia datos al servidor
+        callServer(formData, (error, response) => {
+            if (error) {
+                console.error('Error al enviar los datos:', error);
+                return;
+            }
+            console.log('Respuesta del servidor:', response);
+
+        // Crea un nuevo bloque con los datos del formulario
+        const newPost = {
+            titulo: formData.titulo,
+            contenido: formData.contenido,
+        };
+
+
+        // Agrega la nueva publicación al estado `posts`
+           setPosts((prevPosts) => [
+                { titulo: response.titulo, contenido: response.contenido },
+                ...prevPosts,
+            ]);
+            setFormData({ titulo: '', contenido: '' }); // Limpia el formulario
+        });     
+       
     };
     
-    // Aquí puedes enviar los datos a un servidor o realizar otra acción
-    // Ejemplo de envío a un servidor:
-    fetch('http://localhost:3000/api/posts.js', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Publicación exitosa:', data);
-            // Opcional: Redirigir o limpiar el formulario
-            setFormData({ titulo: '', contenido: '' });
-        })
-        .catch((error) => {
-            console.error('Error al publicar:', error);
-        });
+    
 
     return (
         <div className= {styles.generalPostContainer}>
@@ -70,11 +79,11 @@ function Home() {
                         <label  className = {styles.form_label}
                        
                         htmlFor="titulo">Titulo</label>
-                        <input className={styles.form_input}
+                        <textarea className={styles.form_input}
                             type="text" 
                             id="titulo"
                             name="titulo"
-                            placeholder=""
+                            placeholder="titulo"
                             value={formData.titulo}
                             onChange={handleChange}
                             required />
@@ -82,11 +91,11 @@ function Home() {
                     <div  >
                         <label className = {styles.form_label}
                         htmlFor="contenido">Contenido</label>
-                        <input className={styles.form_input}
+                        <textarea className={styles.form_input}
                             type="text"
                             id="contenido"
                             name="contenido"
-                            placeholder=""
+                            placeholder="contenido"
                             value={formData.contenido}
                             onChange={handleChange}
                             required />
@@ -101,22 +110,32 @@ function Home() {
 
                     
                 </form>
-            </div>
-        </div>
-        
+                <div className={styles.postCard}>
+                    <textarea className={styles.publishPost}>
+                    {posts.map((post, index) => (
+                        <div key={index}>
+                            <h3>{post.titulo}</h3>
+                            <p>{post.contenido}</p>
+                        </div>
+                            )
+                        )
+                    }
+                    </textarea>
+                
+                    <div className={styles.postLikeBtn}>
+                        <button 
+                            onClick={() => handleLikePost(postData.id)}>
+                            <i class="bi bi-heart-fill"></i>
+                        </button>
+                    </div>              
+                </div>
+            </div>    
+        </div>       
     );
 };
     
 export default Home;
 
-/* el corazon de like
-<div className={styles.postLikeBtn}>
-                    <button 
-                        onClick={() => handleLikePost(postData.id)}>
-                         <i class="bi bi-heart-fill"></i>
-                    </button>
-                    </div>
-*/
 
 
 
