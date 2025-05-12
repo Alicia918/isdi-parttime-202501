@@ -9,8 +9,8 @@ function Home() {
     const navigate = useNavigate() // Hook para la navegación
     const [posts, setPosts] = useState([]); // Estado para almacenar las publicaciones
     const [formData, setFormData] = useState({
-        titulo: ' ',
-        contenido: ' ',
+        titulo: '',
+        contenido: '',
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,22 +26,24 @@ function Home() {
             if (error) {
                 console.error('Error al enviar los datos:', error);
                 return;
-            }
+            } // else callServer get posts
             console.log('Respuesta del servidor:', response);
 
         // Crea un nuevo bloque con los datos del formulario
         const newPost = {
             titulo: formData.titulo,
-            contenido: formData.contenido,
+            descripcion: formData.descripcion,
         };
 
 
-        // Agrega la nueva publicación al estado `posts`
-           setPosts((prevPosts) => [
+        // Agrega la nueva publicación al estado `posts` (falta un get)
+        setPosts([newPost,
+          /* setPosts((prevPosts) => [
                 { titulo: response.titulo, contenido: response.contenido },
-                ...prevPosts,
+                ...prevPosts,*/
+                console.log('Publicación exitosa:', response),
             ]);
-            setFormData({ titulo: '', contenido: '' }); // Limpia el formulario
+            setFormData({ titulo: '', descripcion: '' }); // Limpia el formulario
         });     
        
     };
@@ -76,29 +78,29 @@ function Home() {
                     </div>
                     
                     <div>
-                        <label  className = {styles.form_label}
-                       
-                        htmlFor="titulo">Titulo</label>
-                        <textarea className={styles.form_input}
+                        <label  className = {styles.form_label} htmlFor="titulo">Titulo</label>
+                        <input className={styles.form_input}
                             type="text" 
                             id="titulo"
                             name="titulo"
-                            placeholder="titulo"
+                            placeholder="Escribe un título"
                             value={formData.titulo}
                             onChange={handleChange}
-                            required />
+                            required 
+                        />
                     </div>
                     <div  >
                         <label className = {styles.form_label}
-                        htmlFor="contenido">Contenido</label>
-                        <textarea className={styles.form_input}
+                        htmlFor="descripcion">Descripcion</label>
+                        <input className={styles.form_input}
                             type="text"
-                            id="contenido"
-                            name="contenido"
-                            placeholder="contenido"
-                            value={formData.contenido}
+                            id="descripcion"
+                            name="descripcion"
+                            placeholder="Escribe una descripción"
+                            value={formData.descripcion}
                             onChange={handleChange}
-                            required />
+                            required 
+                        />
                     </div>
 
                     <button
@@ -106,21 +108,22 @@ function Home() {
                         type="submit"
                         onClick={onSubmit}>
                         Publicar
-                    </button>
-
-                    
+                    </button>                   
                 </form>
+
                 <div className={styles.postCard}>
-                    <textarea className={styles.publishPost}>
-                    {posts.map((post, index) => (
-                        <div key={index}>
-                            <h3>{post.titulo}</h3>
-                            <p>{post.contenido}</p>
-                        </div>
+                    <div className={styles.publishPost}>
+                        {posts.map((post, index) => (
+                            // chequea post es null
+                            post && (
+                                <div key={index}>
+                                    <p>{post.titulo}</p>
+                                    <p>{post.descripcion}</p>
+                                </div>
                             )
-                        )
-                    }
-                    </textarea>
+                            ))
+                        }
+                    </div>
                 
                     <div className={styles.postLikeBtn}>
                         <button 

@@ -1,3 +1,3 @@
-curl -X POST http://localhost:4000/api/server \
+curl -X POST http://localhost:5000/serverBack \
 -H "Content-Type: application/json" \
--d '{"titulo":"Mi título","contenido":"Mi contenido"}' -v
+-d '{"titulo":"Mi título","descripcion":"Mi contenido"}' -v
