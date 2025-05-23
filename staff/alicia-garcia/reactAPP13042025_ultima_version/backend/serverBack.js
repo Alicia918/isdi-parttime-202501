@@ -1,6 +1,6 @@
 const express = require('express');
 /*import { data } from './data/index.js';*/
-const data  = require('./data/index.js');
+const {data}  = require('./data/index.js');
 
 const cors = require('cors');
 const app = express();
