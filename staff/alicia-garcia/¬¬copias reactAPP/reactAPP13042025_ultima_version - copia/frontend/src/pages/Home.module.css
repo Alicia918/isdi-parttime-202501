@@ -1,0 +1,167 @@
+.PostContainer1 {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-family : Montserrat;
+    font-Size : 1rem;
+ }
+
+ .PostContainer2 {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+ }
+ .smallIcon { 
+    position: absolute;
+    top: 1%;  /* Coloca el contenedor a una distancia desde el top */
+    left: 3%;  /* Coloca el contenedor a una distancia desde la izquierda */
+    transform: translateX(-50%);  /* Centra el contenedor horizontalmente */
+    height: 4rem; /* Ajusta la altura del ícono */
+    width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */
+    cursor: pointer;
+    
+}
+.imgBackPost {
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/FonReg.png");
+   /* background-image: url("/FonReg.png"); */
+    background-Size:  cover;
+    background-Position: center;
+    opacity: 0.3;  /* Hacer la imagen de fondo más transparente*/
+    height: 100vh;
+    z-index: -2;
+    width: 100%;   
+    position: absolute;
+    top: 0;
+}
+ .TitlePost {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    font-family: Montserrat;  
+    text-transform: uppercase;
+   /*transform: rotateX(10deg) rotateY(10deg);*/  
+}
+.postCardGeneral {
+    display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
+    flex-direction: column; /* Los elementos hijos se colocan en una columna (uno debajo del otro) */
+    /*align-items: center; /* Centra los elementos hijos horizontalmente */
+    width: 50vw; /* El ancho del contenedor es el 50% del ancho de la ventana del navegador */
+    gap: 0.5rem; /* Espaciado entre los elementos hijos */
+    border: solid 1px #92b9b9; /* Borde sólido de 1px con color #92b9b9 (verde claro) */
+    padding: 5rem; /* Espaciado interno de 5rem alrededor del contenido */
+    border-radius: 0.5rem; /* Bordes redondeados con un radio de 0.5rem */
+    font-family: Montserrat; /* Fuente utilizada para el texto dentro del contenedor */
+    margin: auto; /* Centra horizontal y verticalmente */
+    top: 8rem; /* Coloca el contenedor en el centro vertical */
+    position: relative; /* Asegura que el contenedor respete el flujo del documento */
+}
+
+.postLikeBtn button{
+
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    padding: 0.5rem 1rem; /* Espaciado interno del botón */
+    background-color: #92b9b9; /* Fondo verde claro */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    font-family: Montserrat; /* Fuente utilizada */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el cursor */
+    border:solid 1px #ca1963; /* Borde sólido de 1px con color #92b9b9 (verde claro) */
+    padding: 0.5rem; /* Espaciado interno del botón */
+}
+
+.postLikeBtn button:hover {
+    background-color: #79a6a6; /* Cambia el color al pasar el cursor */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.postContent {
+    display: flex; /* Utiliza Flexbox para organizar los elementos hijos */
+    flex-direction: column; /* Los elementos hijos se colocan en una columna (uno debajo del otro) */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    width: 100%; /* El ancho del contenedor es el 100% del ancho de su padre */
+    gap: 0.5rem; /* Espaciado entre los elementos hijos */
+    font-family: Montserrat; /* Fuente utilizada para el texto dentro del contenedor */
+    margin: auto; /* Centra horizontal y verticalmente */
+    top: 5rem; /* Coloca el contenedor en el centro vertical */
+    position: relative; /* Asegura que el contenedor respete el flujo del documento */
+    padding: 1rem; /* Espaciado interno de 1rem alrededor del contenido */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+.post-card__author {
+    margin: 0;
+}
+.post-card__title {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.post-card__description {
+    margin: 0;
+}
+
+.post-card__img {
+    width: 10rem;
+}
+
+.post-card__img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.post-card__like {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.post-card__like-btn {
+    cursor: pointer;
+}*/

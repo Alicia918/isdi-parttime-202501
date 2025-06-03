@@ -1,0 +1,88 @@
+/* Contenedor Registro */
+body{
+    margin: 0;
+    padding: 0;
+}
+.regContainer_1 {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   
+ }
+ .regContainer_2 {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;   
+ }
+.smallIcon { 
+    position: absolute;
+    top: 1%;  /* Coloca el contenedor a una distancia desde el top */
+    left: 3%;  /* Coloca el contenedor a una distancia desde la izquierda */
+    transform: translateX(-50%);  /* Centra el contenedor horizontalmente */
+    height: 4rem; /* Ajusta la altura del ícono */
+    width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */
+    cursor: pointer;   
+}
+.regTitle {
+    /*color: whitesmoke;*/
+    font-size: 1.5rem;
+    font-family: Montserrat;  
+    text-transform: uppercase;
+    margin-top: 25px;
+    color: #224F60; /* #242424d0;       /* Un color oscuro para el texto color: #224F60;*/
+    /*color: ; #242424d0;  */
+}
+.logButton { /*botón iniciar sesión independinte del formulario */
+    margin-top: 50px;
+    padding: 10px;  /* Un poco de espacio interno en cada input */
+    background-color: #224F60;
+    color: white; 
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat; 
+    font-size: 1rem;
+    border-radius: 2px;
+    align-items: center;
+    width: 30%;/* Los inputs ocupan el 80% del contenedor (puedes ajustar este valor) */
+    /*height: 50%;*/
+    border: 0.1px solid #2de6cdd3;
+}
+.logButton:hover {
+    background: #2de6cdd3; /* verde al pasar el mouse */
+    color :#224F60;    
+}
+.imgBackRegis {
+    background:  url("/FonRegis.png");
+   /* background-image: url("/FonReg.png"); */
+    background-Size:  cover;
+    background-Position: center;
+    opacity: 0.5;  /* Hacer la imagen de fondo más transparente*/
+    height: 100vh;
+    z-index: -2;
+    width: 100%;   
+    position: absolute;
+    top: 0;
+}
+.buttonSession {
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Centra verticalmente */
+    position: absolute;
+    top: 0.5rem; /* Lo coloca a 1rem desde la parte superior */
+    right: 2rem; /* Lo coloca a 1rem desde el margen derecho */
+    background-color: #2de6cdd3; /* Color de fondo del botón */
+    font-family: Montserrat, sans-serif; /* Fuente del texto */
+    font-size: 1rem; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón (igual al ancho para que sea redondo) */
+    border: none; /* Elimina el borde */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Añade una sombra para darle un efecto */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+

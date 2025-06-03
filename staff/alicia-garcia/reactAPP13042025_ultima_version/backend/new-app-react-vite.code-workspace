@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../new-app-react-vite"
+		},
+		{
+			"path": "../../app"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "app",
+		"liveServer.settings.port": 5501
+	}
+}

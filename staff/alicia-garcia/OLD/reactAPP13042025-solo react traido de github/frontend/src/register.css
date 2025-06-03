@@ -1,0 +1,118 @@
+/* Contenedor Registro */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.regContainer_1 {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+ }
+
+ .regContainer_2 {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+
+ }
+
+.smallIcon { 
+    position: absolute;
+    top: 1%;  /* Coloca el contenedor a una distancia desde el top */
+    left: 3%;  /* Coloca el contenedor a una distancia desde la izquierda */
+    transform: translateX(-50%);  /* Centra el contenedor horizontalmente */
+    height: 4rem; /* Ajusta la altura del ícono */
+    width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */
+    cursor: pointer;
+    
+}
+
+.regTitle {
+    color: #224F60;
+    font-size: 1.5rem;
+    font-family: Montserrat;  
+    text-transform: uppercase;
+   /*transform: rotateX(10deg) rotateY(10deg);*/
+    
+}
+
+.form { /*estilos formulario*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-family: Montserrat; 
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    padding: 35px;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #ccc; /* Borde delgado de color gris claro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+    width: 300px; /* Tamaño ajustado del formulario */
+    z-index: 1;
+
+}
+
+.form input{ /* submit de registrarse */
+    margin: 10px 0;         /* Espacio entre los inputs (en este caso, margen arriba y abajo) */
+    padding: 10px;          /* Un poco de espacio interno en cada input */
+    width: 80%;             /* Los inputs ocupan el 80% del contenedor (puedes ajustar este valor) */
+    max-width: 300px;       /* El ancho máximo del input es de 300px */  
+    border-radius: 4px;     /* Bordes redondeados en los inputs */  
+    border: 2px solid rosybrown; /* Un borde verde para contrastar */
+    font-family: Montserrat; 
+    font-size: 1rem;
+    background-color: whitesmoke;
+    cursor: pointer;
+    width: 100%;    
+   
+}
+
+ /* Etiquetas de los campos */
+ .form label {
+    color: #333; /* Un color oscuro para el texto */
+    font-family: Montserrat; 
+    font-size: 1rem;
+    
+  }
+
+  
+.logButton { /*botón iniciar sesión independinte del formulario */
+        margin-top: 500px;
+        padding: 10px;  /* Un poco de espacio interno en cada input */
+        background-color: rosybrown;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: Montserrat; 
+        font-size: 1rem;
+        border-radius: 2px;
+        align-items: center;
+        width: 100%;/* Los inputs ocupan el 80% del contenedor (puedes ajustar este valor) */
+        height: 100%;
+      }
+
+  
+
+
+.imgBackRegis {
+    background-image: url("https://previews.123rf.com/images/kashtanka/kashtanka1707/kashtanka170700009/81693220-fondo-abstracto-transparente-con-mujer-estilizada-en-pose-de-yoga-textura-patr%C3%B3n-para-textiles.jpg");
+    background-Size:  cover;
+    background-Position: center;
+    opacity: 0.3;  /* Hacer la imagen de fondo más transparente*/
+    height: 100vh;
+    z-index: -2;
+    width: 100%;   
+    position: absolute;
+    top: 0;
+}
