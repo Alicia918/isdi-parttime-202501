@@ -58,19 +58,19 @@
     width: 13%;  /* Ajusta el tamaño de la imagen al 80% del contenedor */
     height: auto;   
     filter: brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%);
+    cursor: pointer;
   }
   /*botón que comienza primera pantalla*/
   .joinButton{
      
-    
     display: flex;
     justify-content: center;
     align-items: center;  /* Centra verticalmente */
     flex-direction: row;
     position: absolute;
     top: 1rem; /* Lo coloca a 1rem desde la parte superior */
-    right: 1rem; /* Lo coloca a 1rem desde el margen derecho */
-    width: 5rem;
+    right: 10rem; /* Lo coloca a 1rem desde el margen derecho */
+    width: 10rem;
 
     cursor: pointer;
   }
