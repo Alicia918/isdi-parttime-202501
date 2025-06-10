@@ -31,19 +31,25 @@
     cursor: pointer;  
 }  
 .form_buttonLog[type="submit"] { /* Estilo para el botón de enviar */
-    background-color: #224F60; /* Un color de fondo para el botón */
+    background-color: #e98111; /*fondo para el botón */
     color: white; /* Color del texto del botón */
     border: none; /* Sin borde */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     font-family: Montserrat; 
     font-size: 1rem;
     border-radius: 2px;
-    width: 80%; /* El botón ocupa el 80% del contenedor (puedes ajustar este valor) */
+    width: 50%; /* El botón ocupa el 80% del contenedor (puedes ajustar este valor) */
     /*height: 100%;*/
     padding: 10px; /* Espacio interno en el botón */
     margin-top: 10px; /* Espacio entre el botón y el input anterior */
     transition: background-color 0.3s, color 0.3s; /* Transición suave para el color de fondo y el texto */
-    text-align: center; /* Centra el texto dentro del botón */
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem; 
+    justify-content: center; /* Centra el contenido del botón horizontalmente */
+    align-items: center; /* Centra el contenido del botón verticalmente */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    height: 40px; /* Altura del botón */
 }
 .form_buttonLog[type="submit"]:hover {
     background: #5a6160; /* Cambia el color de fondo al pasar el mouse */

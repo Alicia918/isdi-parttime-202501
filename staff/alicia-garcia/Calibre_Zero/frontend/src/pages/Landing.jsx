@@ -13,13 +13,27 @@ function Landing() {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-        confirmPassword: ''
     });
        const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evita que la página se recargue
+
+        if (formData.password === '' || formData.confirmPassword === '') {
+            alert('Por favor, completa ambos campos de contraseña');
+            navigate('/'); // Redirige al login si están vacías
+        return;
+        }
+        if (formData.password !== formData.confirmPassword)  {
+            alert('Las contraseñas no coinciden');
+           navigate('/'); // Redirige al login después del registro
+        return;
+        }
+       
+        console.log('Datos enviados:', formData);
+        navigate('/home'); // Redirige al login después del registro
     };
 
     const handleLoginRedirect = () => {
