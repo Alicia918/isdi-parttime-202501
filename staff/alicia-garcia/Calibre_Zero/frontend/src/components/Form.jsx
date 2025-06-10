@@ -42,7 +42,7 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
         </button>   
         <button 
             className='form_buttonLog' 
-            type="submit"
+            type="button"
             onClick={() => navigate('/register')}
             > Registrate
         </button>    

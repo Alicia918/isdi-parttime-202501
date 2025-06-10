@@ -10,6 +10,7 @@ function Landing() {
 
     const navigate = useNavigate() // Hook para la navegación
     const [showForm, setShowForm] = useState(false); // Estado correcto
+    const [showRegisterForm, setRegisterForm] = useState(false); // Estado correcto
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -52,6 +53,15 @@ function Landing() {
                 <h1>CALIBRE ZERO</h1>  
             </div>  
             {showForm && (
+                    <div >
+                        <Form
+                            onSubmit={handleSubmit}
+                            formData={formData}
+                            handleChange={handleChange}
+                        />
+                    </div>
+                )}
+             {showRegisterForm && (
                     <div >
                         <Form
                             onSubmit={handleSubmit}
