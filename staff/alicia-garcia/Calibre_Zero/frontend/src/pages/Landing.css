@@ -71,7 +71,7 @@
     top: 1rem; /* Lo coloca a 1rem desde la parte superior */
     right: 1rem; /* Lo coloca a 1rem desde el margen derecho */
     width: 5rem;
-    zIndex: 2;
+
     cursor: pointer;
   }
   
