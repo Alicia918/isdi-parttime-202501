@@ -8,7 +8,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Landing from "./pages/Landing";
-import Register from "./pages/Register";
 import Home from './pages/Home';
 
 
@@ -18,8 +17,6 @@ const App = () => {
         <Routes>
           {/* Ruta principal que muestra Landing */}
           <Route path="/" element={<Landing />} />
-          {/* Otras rutas */}
-          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       );

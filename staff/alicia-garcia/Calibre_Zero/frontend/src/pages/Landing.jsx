@@ -2,6 +2,7 @@ import React, { useState } from 'react'; // Import useState
 import { useNavigate } from 'react-router-dom';
 import './Landing.css';
 import Form from '../components/Form.jsx';
+import FormRegister from '../components/FormRegister.jsx';
 
 
 
@@ -10,10 +11,11 @@ function Landing() {
 
     const navigate = useNavigate() // Hook para la navegación
     const [showForm, setShowForm] = useState(false); // Estado correcto
-    const [showRegisterForm, setRegisterForm] = useState(false); // Estado correcto
+    const [showRegisterForm, setShowRegisterForm] = useState(false); // Estado correcto
     const [formData, setFormData] = useState({
         email: '',
         password: '',
+        confirmPassword: ''
     });
        const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,7 +41,16 @@ function Landing() {
 
     const handleLoginRedirect = () => {
         setShowForm(true); // Cambia el estado para mostrar el formulario
+         setShowRegisterForm(false); 
     }; 
+    
+    const handleRegisterRedirect = () => {
+        setShowRegisterForm(true);
+         setShowForm(false);
+  
+    };
+
+
     return (
 
     <div className="generalLandingContainer">   
@@ -53,23 +64,26 @@ function Landing() {
                 <h1>CALIBRE ZERO</h1>  
             </div>  
             {showForm && (
-                    <div >
-                        <Form
-                            onSubmit={handleSubmit}
-                            formData={formData}
-                            handleChange={handleChange}
-                        />
-                    </div>
-                )}
-             {showRegisterForm && (
-                    <div >
-                        <Form
-                            onSubmit={handleSubmit}
-                            formData={formData}
-                            handleChange={handleChange}
-                        />
-                    </div>
-                )}
+                <div >
+                    <Form
+                        onSubmit={handleSubmit}
+                        formData={formData}
+                        handleChange={handleChange}
+                        onRegisterClick={handleRegisterRedirect}
+                    />
+                </div>
+            )}
+            {showRegisterForm && (
+                <div>
+                    <FormRegister
+                        onSubmit={handleSubmit}
+                        formData={formData}
+                        handleChange={handleChange}
+                        onRegisterClick={handleRegisterRedirect}
+                    />
+                </div>
+            )}
+            
         </div>
     </div>
     

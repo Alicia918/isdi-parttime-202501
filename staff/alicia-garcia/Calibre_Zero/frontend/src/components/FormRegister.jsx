@@ -3,7 +3,7 @@ import Register from '../pages/Register';
 import './Form.css'; // Importa el archivo CSS para estilos
 import { useLocation } from 'react-router-dom';
 
-const Form = ({ onSubmit, formData, handleChange, onRegisterClick }) => {
+const FormRegister = ({ onSubmit, formData, handleChange }) => {
 const location = useLocation(); // Obtiene la ubicación actual para determinar si es login o registro
 
   return (
@@ -33,26 +33,7 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
             required
             />
         </div>
-        
-      
-        <button 
-            className='form_buttonLog' 
-            type="submit"
-            > Logueate
-        </button>   
-        <button 
-            className='form_buttonLog' 
-            type="button"
-            onClick={onRegisterClick}
-            > Registrate
-        </button>    
-        </form>
-    );  
-};
-
-export default Form;
-
-/*  <div>
+         <div>
             <label htmlFor="confirmPassword">Confirmar Contraseña</label>
             <input
             type="password"
@@ -64,6 +45,20 @@ export default Form;
             required
             />
         </div> 
+      
+        <button 
+            className='form_buttonLog' 
+            type="button"
+            onClick={() => navigate('/register')}
+            > Registrate
+        </button>    
+        </form>
+    );  
+};
+
+export default FormRegister;
+
+/* 
         
         {location.pathname === '/' ? 'Logueate' : 'Registrate'}
         
