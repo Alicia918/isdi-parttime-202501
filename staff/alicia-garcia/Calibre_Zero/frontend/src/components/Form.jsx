@@ -8,9 +8,13 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
 
   return (
  
-        <form className="form" onSubmit={onSubmit}>
+        <form className="flex flex-col items-center gap-6  text-base p-8 rounded-lg bg-white/90 rounded-lg border-2 border-gray-300 
+                        shadow-lg w-[300px] z-10 mt-8 text-gray-800 text-base" 
+        onSubmit={onSubmit}
+        >
         <div>
-            <label className='form_label' htmlFor="email">Email</label>
+            <label className='w-full p-2 rounded box-border'
+                htmlFor="email">Email</label>
             <input
             type="email"
             id="email"
@@ -36,7 +40,8 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
         
       
         <button 
-            className='form_buttonLog' 
+            className='text-white cursor-pointer text-base rounded-sm w-6/12 p-2 mt-2 flex flex-row gap-6 justify-center items-center box-border h-10 ' 
+            style={{ filter:'brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%)'}}
             type="submit"
             > Logueate
         </button>   

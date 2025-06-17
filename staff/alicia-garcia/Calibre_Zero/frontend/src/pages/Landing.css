@@ -1,16 +1,17 @@
-:root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+/*:root {
+  --primary-color: #e98111; /* Color principal */
+   /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     /*color-scheme: light dark;
     /*color: rgba(255, 255, 255, 0.87);*/
     /*background-color: #24242479;*/
     /*background-color: #d1e42b;
-    font-synthesis: none;*/
+    font-synthesis: none;*
   
   }
-  /* Contenedor landing */
-  body{
+  /* Contenedor landing *
+  body {
     margin: 0;
     padding: 0;
   }
@@ -19,11 +20,11 @@
   .lanContainer_1 {
     display: flex;
     width: 100%;
-    height: 100vh;  /* Asegúrate de que el contenedor tenga altura de vista */
+    height: 100vh;  /* Asegúrate de que el contenedor tenga altura de vista *
     z-index: 1; 
     justify-content: center;
     align-items: center; 
-    /*background-color: #072c1a; */  
+    /*background-color: #072c1a; 
     background-color: #e98111; 
   }
   .lanContainer_2 {
@@ -42,20 +43,20 @@
   .titleLanding { 
     display: flex;
     justify-content: center;
-    align-items: center;  /* Centra verticalmente */
-    color: #fff; /* Un color oscuro para el texto color: #224F60;*/
+    align-items: center;  /* Centra verticalmente *
+    color: #fff; /* Un color oscuro para el texto color: #224F60;*
     font-size: 1.5rem;
     font-family: montserrat;  
   
-  }
+  } 
 
-  /*img icono proncipal*/
+  /*img icono proncipal*
   .icon { 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1; 
-    width: 13%;  /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    width: 13%;  /* Ajusta el tamaño de la imagen al 80% del contenedor *
     height: auto;   
     filter: brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%);
     cursor: pointer;

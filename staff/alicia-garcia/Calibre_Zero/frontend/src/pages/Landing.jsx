@@ -53,14 +53,21 @@ function Landing() {
 
     return (
 
-    <div className="generalLandingContainer">   
-        <header className ="imgBack"></header>
-        <div className="lanContainer_2">
+    <div >   
+    
+        <div className="flex justify-center items-center flex-col w-full h-full z-50 absolute top-0  w-full h-screen"
+             style={{ backgroundColor: '#2c2c2c' }}>
+
             <img src="precision_icon.png"
-                 className="icon" 
-                 onClick={handleLoginRedirect}
+                className="flex justify-center items-center h-auto cursor-pointer w-70 mt-30 " 
+                style={{ filter:'brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%)'
+                }}
+                onClick={handleLoginRedirect}
+                
             />
-            <div className="titleLanding">
+
+            <div className="flex w-full h-screen justify-center items-center text-5xl mb-30 color-white text-center "
+            style={{ color: '#fff' }}>
                 <h1>CALIBRE ZERO</h1>  
             </div>  
             {showForm && (
