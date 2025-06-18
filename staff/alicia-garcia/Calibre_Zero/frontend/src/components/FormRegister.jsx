@@ -6,12 +6,18 @@ import { useLocation } from 'react-router-dom';
 const FormRegister = ({ onSubmit, formData, handleChange }) => {
 const location = useLocation(); // Obtiene la ubicación actual para determinar si es login o registro
 
+
   return (
  
-        <form className="form" onSubmit={onSubmit}>
+        <form className="flex flex-col items-center gap-6  text-base p-8 rounded-lg bg-white/90 rounded-lg border-2 border-gray-300 
+                        shadow-lg w-[300px] z-10 mt-8 text-gray-800 text-base" 
+        
+        onSubmit={onSubmit}>
         <div>
-            <label className='form_label' htmlFor="email">Email</label>
-            <input
+            <label className='w-full p-1 rounded box-border' 
+            style={{ fontFamily: 'Montserrat' }}
+            htmlFor="email">Email</label>
+            <input className='p-2 w-full rounded text-base bg-gray-400 cursor-pointer'
             type="email"
             id="email"
             name="email"
@@ -22,8 +28,10 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
             />
         </div>
         <div>
-            <label htmlFor="password">Contraseña</label>
-            <input
+            <label className='w-full rounded box-border' 
+             style={{ fontFamily: 'Montserrat' }}
+             htmlFor="password">Contraseña</label>
+            <input className='p-2 w-full rounded text-base bg-gray-400 cursor-pointer'
             type="password"
             id="password"
             name="password"
@@ -34,8 +42,10 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
             />
         </div>
          <div>
-            <label htmlFor="confirmPassword">Confirmar Contraseña</label>
-            <input
+            <label className='w-full rounded box-border' 
+             style={{ fontFamily: 'Montserrat' }}
+             htmlFor="confirmPassword">Confirmar Contraseña</label>
+            <input className='p-2 w-full rounded text-base bg-gray-400 cursor-pointer'
             type="password"
             id="confirmPassword"
             name="confirmPassword"
@@ -47,9 +57,10 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
         </div> 
       
         <button 
-            className='form_buttonLog' 
+            className='bg-orange-600 text-white cursor-pointer text-base rounded-sm w-6/12 p-2 mt-2 flex flex-row gap-6 justify-center items-center box-border h-10' 
+            style={{ background: '#e98111', fontFamily: 'Montserrat' }}
             type="button"
-            onClick={() => navigate('/register')}
+            onClick={() => navigate('/login')}
             > Registrate
         </button>    
         </form>

@@ -9,13 +9,14 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
   return (
  
         <form className="flex flex-col items-center gap-6  text-base p-8 rounded-lg bg-white/90 rounded-lg border-2 border-gray-300 
-                        shadow-lg w-[300px] z-10 mt-8 text-gray-800 text-base" 
+                        shadow-lg w-[300px] z-10 mt-8 text-gray-800 text-base " 
         onSubmit={onSubmit}
         >
         <div>
-            <label className='w-full p-2 rounded box-border'
+            <label className='w-full p-1 rounded box-border'
+            style={{ fontFamily: 'Montserrat' }}
                 htmlFor="email">Email</label>
-            <input
+            <input className='p-2 w-full rounded text-base bg-gray-400 cursor-pointer'
             type="email"
             id="email"
             name="email"
@@ -26,8 +27,10 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
             />
         </div>
         <div>
-            <label htmlFor="password">Contraseña</label>
-            <input
+            <label lassName='w-full p-2 rounded box-border'
+            style={{ fontFamily: 'Montserrat' }}
+             htmlFor="password">Contraseña</label>
+            <input className='p-2 w-full rounded text-base bg-gray-400 cursor-pointer'
             type="password"
             id="password"
             name="password"
@@ -41,12 +44,15 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
       
         <button 
             className='text-white cursor-pointer text-base rounded-sm w-6/12 p-2 mt-2 flex flex-row gap-6 justify-center items-center box-border h-10 ' 
-            style={{ filter:'brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%)'}}
+            style={{ background: '#e98111', fontFamily: 'Montserrat' }}
             type="submit"
             > Logueate
         </button>   
         <button 
-            className='form_buttonLog' 
+            className='text-white cursor-pointer text-base rounded-sm w-6/12 p-2 mt-2 flex flex-row gap-6 justify-center items-center box-border h-10' 
+            style={{ background: '#e98111', 
+                     fontFamily: 'Montserrat'
+            }}
             type="button"
             onClick={onRegisterClick}
             > Registrate
@@ -56,21 +62,3 @@ const location = useLocation(); // Obtiene la ubicación actual para determinar 
 };
 
 export default Form;
-
-/*  <div>
-            <label htmlFor="confirmPassword">Confirmar Contraseña</label>
-            <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Confirma tu contraseña"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-            />
-        </div> 
-        
-        {location.pathname === '/' ? 'Logueate' : 'Registrate'}
-        
-        
-        */

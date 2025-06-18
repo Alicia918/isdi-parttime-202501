@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
 
 const url = 'mongodb://localhost:27017'
-const dbName = 'yoga-terapia'
+const dbName = 'calibre-zero'
 
 export const data = {
     users: null, 
