@@ -1,4 +1,5 @@
-//import React from 'react';
+
+import React from 'react';
 import styles from './Home.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from "react"
@@ -48,32 +49,34 @@ function Home() {
        
     };
     
-    
-
     return (
         <div className= {styles.generalPostContainer}>
             <div className={styles.imgBackRegis}></div>
 
             <div className={styles.PostContainer1}>
-                <img className={styles.smallIcon} src='https://cdn-icons-png.freepik.com/512/11818/11818739.png?ga=GA1.1.1811276553.1739812746'
-                     alt='small Icon'
+                <img src="precision_icon.png"
+                    className="flex justify-center items-center h-auto cursor-pointer w-15 mt-5 left-3 absolute" 
+                    style={{ filter:'brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%)',
+                    }}
                      onClick={() => navigate('/')}
                 >
                 </img>
             </div>
             
             <div className={styles.PostContainer2}>
-                <div className = {styles.TitlePost}>
+                <div className = 'flex flex-col items-center text-gray-200 text-xl uppercase'
+                    style={{ color: '#2c2c2c', fontFamily: 'Montserrat' }}>
                     <p>MIS PUBLICACIONES</p>
                 </div>
             </div>
 
-            <div className={styles.postCardGeneral}>
+            <div className= 'flex flex-col items-center gap-2 rounded-lg m-auto'>
 
                 <form className={styles.post} 
                     onSubmit={onSubmit}>
-                    
-                    <div className = {styles.TitlePost}>
+
+                    <div className = 'flex flex-col items-center text-teal-900 text-xl uppercase'>
+
                         <p>Nueva publicación</p>
                     </div>
                     

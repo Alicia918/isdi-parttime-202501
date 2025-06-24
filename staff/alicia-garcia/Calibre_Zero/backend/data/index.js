@@ -1,9 +1,9 @@
-import { MongoClient, ObjectId } from "mongodb";
+const { MongoClient, ObjectId } = require("mongodb");
 
 const url = 'mongodb://localhost:27017'
 const dbName = 'calibre-zero'
 
-export const data = {
+const data = {
     users: null, 
     posts: null,
     ObjectId,
@@ -21,4 +21,4 @@ export const data = {
             })
     }
 };
-//export default data ;
+module.exports = {data};

@@ -21,13 +21,13 @@
  }
  .smallIcon { 
     position: absolute;
-    top: 1%;  /* Coloca el contenedor a una distancia desde el top */
-    left: 3%;  /* Coloca el contenedor a una distancia desde la izquierda */
-    transform: translateX(-50%);  /* Centra el contenedor horizontalmente */
-    height: 4rem; /* Ajusta la altura del ícono */
+    top: 1%;  /* Coloca el contenedor a una distancia desde el top *
+    left: 3%;  /* Coloca el contenedor a una distancia desde la izquierda *
+    transform: translateX(-50%);  /* Centra el contenedor horizontalmente *
+    height: 4rem; /* Ajusta la altura del ícono *
     width: 4rem;  /* Asegura que la imagen tenga un tamaño específico */
     cursor: pointer;   
-}
+}*
 .imgBackRegis {
     background:  url("/FonRegis.png");
    /* background-image: url("/FonReg.png"); */

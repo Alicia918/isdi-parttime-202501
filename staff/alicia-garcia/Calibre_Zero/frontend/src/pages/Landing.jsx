@@ -24,17 +24,11 @@ function Landing() {
     const handleSubmit = (e) => {
         e.preventDefault(); // Evita que la página se recargue
 
-        if (formData.password === '' || formData.confirmPassword === '') {
+        if (formData.password === '' ) {
             alert('Por favor, completa ambos campos de contraseña');
-            navigate('/'); // Redirige al login si están vacías
         return;
         }
-        if (formData.password !== formData.confirmPassword)  {
-            alert('Las contraseñas no coinciden');
-           navigate('/'); // Redirige al login después del registro
-        return;
-        }
-       
+               
         console.log('Datos enviados:', formData);
         navigate('/home'); // Redirige al login después del registro
     };
@@ -83,10 +77,9 @@ function Landing() {
             {showRegisterForm && (
                 <div>
                     <FormRegister
-                        onSubmit={handleSubmit}
-                        formData={formData}
-                        handleChange={handleChange}
-                        onRegisterClick={handleRegisterRedirect}
+                        setShowRegisterForm={setShowRegisterForm}
+                        setShowForm={setShowForm}
+
                     />
                 </div>
             )}
