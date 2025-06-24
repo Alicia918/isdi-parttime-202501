@@ -12,7 +12,7 @@ function CallServer(formData, callback) {
         .then((data) => {
             console.log('Publicación exitosa del CallServer frontend :', data);
             callback(null, data); // Llama al callback con los datos
-           // setFormData({ titulo: '', contenido: '' });
+           // setFormData({ cita: '', contenido: '' });
         })
         .catch((error) => {
             console.error('Error al publicar frontend:', error);

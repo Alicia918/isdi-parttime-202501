@@ -9,7 +9,7 @@
     font-family : Montserrat;
     font-Size : 1rem; 
  }
-.PostContainer2 { /* Contenedor arriba para icono y titulo */
+.PostContainer2 { /* Contenedor arriba para icono y cita */
     display: flex;
     flex-direction: column;
     align-items: center;

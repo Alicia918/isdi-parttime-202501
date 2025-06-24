@@ -10,7 +10,7 @@ function Home() {
     const navigate = useNavigate() // Hook para la navegación
     const [posts, setPosts] = useState([]); // Estado para almacenar las publicaciones
     const [formData, setFormData] = useState({
-        titulo: '',
+        cita: '',
         contenido: '',
     });
     const handleChange = (e) => {
@@ -32,7 +32,7 @@ function Home() {
 
         // Crea un nuevo bloque con los datos del formulario
         const newPost = {
-            titulo: formData.titulo,
+            cita: formData.cita,
             descripcion: formData.descripcion,
         };
 
@@ -40,20 +40,18 @@ function Home() {
         // Agrega la nueva publicación al estado `posts` (falta un get)
         setPosts([newPost,
           /* setPosts((prevPosts) => [
-                { titulo: response.titulo, contenido: response.contenido },
+                { cita: response.cita, contenido: response.contenido },
                 ...prevPosts,*/
                 console.log('Publicación exitosa:', response),
             ]);
-            setFormData({ titulo: '', descripcion: '' }); // Limpia el formulario
+            setFormData({ cita: '', descripcion: '' }); // Limpia el formulario
         });     
        
     };
     
     return (
         <div className= {styles.generalPostContainer}>
-            <div className={styles.imgBackRegis}></div>
-
-            <div className={styles.PostContainer1}>
+            <div className='flex flex-col items-center w-full h-full relative'>
                 <img src="precision_icon.png"
                     className="flex justify-center items-center h-auto cursor-pointer w-15 mt-5 left-3 absolute" 
                     style={{ filter:'brightness(0) saturate(100%) invert(53%) sepia(82%) saturate(749%) hue-rotate(-16deg) brightness(101%) contrast(101%)',
@@ -63,10 +61,10 @@ function Home() {
                 </img>
             </div>
             
-            <div className={styles.PostContainer2}>
-                <div className = 'flex flex-col items-center text-gray-200 text-xl uppercase'
+            <div className='flex flex-col items-center w-full h-full relative'>
+                <div className = 'flex flex-col items-center text-xl uppercase'
                     style={{ color: '#2c2c2c', fontFamily: 'Montserrat' }}>
-                    <p>MIS PUBLICACIONES</p>
+                    <p>MIS CITAS</p>
                 </div>
             </div>
 
@@ -75,27 +73,33 @@ function Home() {
                 <form className={styles.post} 
                     onSubmit={onSubmit}>
 
-                    <div className = 'flex flex-col items-center text-teal-900 text-xl uppercase'>
-
-                        <p>Nueva publicación</p>
+                    <div className = 'flex flex-col items-center text-teal-900 text-xl uppercase'
+                    style={{ color: '#2c2c2c', fontFamily: 'Montserrat' }}>
+                        <p>Nuevas Citas</p>
                     </div>
                     
                     <div>
-                        <label  className = {styles.form_label} htmlFor="titulo">Titulo</label>
-                        <input className={styles.form_input}
+                        <label  className = 'flex w-full text-teal-900 font-bold mb-2 uppercase tracking-wider h-8 text-center'
+                        style={{ color: '#2c2c2c', fontFamily: 'Montserrat' }}
+                        htmlFor="cita">
+                        CITA</label>
+                        <input  className='flex flex-col h-12 text-base rounded p-2 font-montserrat w-10/12 mx-auto font-montserrat w 85%;'
+                             style={{ backgroundColor: 'rgb(226, 228, 227)' }}
                             type="text" 
-                            id="titulo"
-                            name="titulo"
-                            placeholder="Escribe un título"
-                            value={formData.titulo}
+                            id="cita"
+                            name="cita"
+                            placeholder="Cita "
+                            value={formData.cita}
                             onChange={handleChange}
                             required 
                         />
                     </div>
                     <div  >
-                        <label className = {styles.form_label}
-                        htmlFor="descripcion">Descripcion</label>
-                        <input className={styles.form_input}
+                        <label className = 'flex w-full text-teal-900 font-bold mb-2 uppercase tracking-wider h-8 text-center font-montserrat'
+                         style={{ color: '#2c2c2c' }}
+                        htmlFor="descripcion">Motivos</label>
+                        <input className='flex flex-col h-12 text-base rounded p-2 font-montserrat w-10/12 mx-auto font-montserrat w 85%;'
+                             style={{ backgroundColor: 'rgb(226, 228, 227)' }}
                             type="text"
                             id="descripcion"
                             name="descripcion"
@@ -107,8 +111,8 @@ function Home() {
                     </div>
 
                     <button
-                        className={styles.form_button}
-                        type="submit"
+                        className='flex justify-center items-center w-6/12 p-2 text-base bg-teal-900 text-white rounded cursor-pointer uppercase font-bold mt-4 border-0 auto font-montserrat mx-auto block'
+                        style={{ backgroundColor: 'rgb(253, 135, 66)' }}
                         onClick={onSubmit}>
                         Publicar
                     </button>                   
@@ -120,7 +124,7 @@ function Home() {
                             // chequea post es null
                             post && (
                                 <div key={index}>
-                                    <p>{post.titulo}</p>
+                                    <p>{post.cita}</p>
                                     <p>{post.descripcion}</p>
                                 </div>
                             )
