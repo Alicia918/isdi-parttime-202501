@@ -1,6 +1,5 @@
 import React, { useState } from 'react'; // Import useState
 import { useNavigate } from 'react-router-dom';
-import './Landing.css';
 import Form from '../components/Form.jsx';
 import FormRegister from '../components/FormRegister.jsx';
 

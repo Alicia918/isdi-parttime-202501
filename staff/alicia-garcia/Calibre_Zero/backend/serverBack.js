@@ -10,11 +10,11 @@ const json = express.json();
 app.use(cors());
 app.use(json);
 app.post('/serverBack', json, (req, res) => { //ruta para manejar el servidor
-            const { cita, description } = req.body; // handle el manejador de la ruta
-            console.log('Datos recibidos desde serverBack:', { cita, description });
+            const { titulo, description } = req.body; // handle el manejador de la ruta
+            console.log('Datos recibidos desde serverBack:', { titulo, description });
             res.status(201).json({ 
             message: 'Publicación creada con éxito',
-            cita,
+            titulo,
             description,
             });
         });
@@ -39,18 +39,18 @@ data.connect()
 
         /* Ruta para manejar GET 
         app.get('/', (req, res) => {
-            const { cita, descripcion } = req.body;
-            console.log('Datos recibidos:', { cita, descripcion });
+            const { titulo, descripcion } = req.body;
+            console.log('Datos recibidos:', { titulo, descripcion });
    
         });*/
 
         /* Ruta para manejar SERVER /server
         const postsCollection = data.posts;
-        return postsCollection.insertOne({ cita, descripcion })
+        return postsCollection.insertOne({ titulo, descripcion })
         .then((result) => {
             res.status(201).json({
                 message: 'Publicación creada con éxito en el servidor const postsCollection',
-                cita,
+                titulo,
                 descripcion,
                 id: result.insertedId,
             });*/

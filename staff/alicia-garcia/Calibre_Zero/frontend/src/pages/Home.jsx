@@ -17,6 +17,29 @@ function Home() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
+    const handleDeletePost = (id) => {
+        try {
+            const isUserSure = confirm('Estas seguro de borrar?')
+            if (isUserSure) {
+            // logics.posts.deletePost(getLoggedUserId(), id)
+                setRefreshPosts(Date.now())
+            }
+        } catch (error) {
+            alert('Algo no va bien!')
+            console.error(error)
+        }
+    };
+
+    const handleLikePost = (id) => {
+            try {
+                postData.toggleLike(id)
+                setRefreshPosts(Date.now())
+            } catch (error) {
+                alert('Algo no va bien!')
+                console.error(error)
+            }
+        };
+
     // Manejar el envío del formulario
     const onSubmit = (e) => {
         e.preventDefault();// Evita que la página se recargue
@@ -45,7 +68,7 @@ function Home() {
                 console.log('Publicación exitosa:', response),
             ]);
             setFormData({ cita: '', descripcion: '' }); // Limpia el formulario
-        });     
+        });    
        
     };
     
@@ -70,7 +93,7 @@ function Home() {
 
             <div className= 'flex flex-col items-center gap-2 rounded-lg m-auto'>
 
-                <form className={styles.post} 
+                <form className='flex flex-col justify-center gap-4 text-xl p-8 rounded-lg mt-4 font-montserrat bg-white/90 border-2 border-gray-300 shadow-lg w-[500px] text-gray-800'
                     onSubmit={onSubmit}>
 
                     <div className = 'flex flex-col items-center text-teal-900 text-xl uppercase'
@@ -98,7 +121,7 @@ function Home() {
                         <label className = 'flex w-full text-teal-900 font-bold mb-2 uppercase tracking-wider h-8 text-center font-montserrat'
                          style={{ color: '#2c2c2c' }}
                         htmlFor="descripcion">Motivos</label>
-                        <input className='flex flex-col h-12 text-base rounded p-2 font-montserrat w-10/12 mx-auto font-montserrat w 85%;'
+                        <input className='flex flex-col h-12 text-base rounded p-2 font-montserrat w-10/12 mx-auto font-montserrat w 85%'
                              style={{ backgroundColor: 'rgb(226, 228, 227)' }}
                             type="text"
                             id="descripcion"
@@ -118,8 +141,9 @@ function Home() {
                     </button>                   
                 </form>
 
-                <div className={styles.postCard}>
-                    <div className={styles.publishPost}>
+                <div className='flex flex-col gap-4 text-base p-8 rounded-lg mt-4 border-2 border-gray-300 shadow-lg w-[500px] text-gray-800'>
+                    <div className='flex flex-col h-12 w-full h-32 text-gray-900 bg-gray-100 rounded-lg items-start gap-2 relative rounded p-4 text-base mx-auto w-10/12 w-[90%] font-montserrat border border-[darkorange] shadow-lg'>
+                      
                         {posts.map((post, index) => (
                             // chequea post es null
                             post && (
@@ -131,11 +155,17 @@ function Home() {
                             ))
                         }
                     </div>
-                
-                    <div className={styles.postLikeBtn}>
-                        <button 
+                        
+                    <button
+                        className='flex justify-center items-right w-3/12 p-2 text-base bg-teal-900 text-white rounded cursor-pointer uppercase font-bold mt-4 border-0 auto font-montserrat mx-auto block'
+                        style={{ backgroundColor: 'rgb(173, 159, 151)' }}
+                        onClick={() => handleDeletePost(post.citaid)}>
+                        Borrar
+                    </button>     
+                    <div>
+                        <button className='cursor-pointer text-2xl border-0 font-montserrat text-left'
                             onClick={() => handleLikePost(postData.id)}>
-                            <i class="bi bi-heart-fill"></i>
+                           <i className="bi bi-heart-fill" style={{ color: '#e98111' }}></i>
                         </button>
                     </div>              
                 </div>
